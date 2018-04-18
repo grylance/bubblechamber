@@ -7,16 +7,19 @@ const port = isDeveloping ? 2000 : process.env.PORT
 
 app.use('/dist', express.static(path.join(__dirname, '/dist')))
 
+const cacheBuster = Date.now()
+
 app.get('/*', (req, res) => {
   res.send(
     `
       <!DOCTYPE html>
       <head>
         <title>BUBBLE CHAMBER</title>
+        <link href='dist/base.css' rel='stylesheet' />
       </head>
       <body>
         <div id='app'></div>
-        <script src='dist/main.js'></script>
+        <script src='dist/main.js#${cacheBuster}'></script>
       </body>
     `
   )
