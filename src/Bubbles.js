@@ -20,12 +20,13 @@ const Bubble = styled.div`
   height: 100px;
   opacity: 0.5;
   border-radius: 50%;
-  border: 1px solid #ccc;
   cursor: pointer;
   background: linear-gradient(to bottom, #3dff32 1%,#a189ff 100%);
   opacity: 0.3;
-  animation: ${float} ${Math.floor(Math.random() * 200)}s linear;
+  animation: ${float} ${props => props.speed}s linear;
 `
+
+const maxBubbles = 41
 
 class BubbleComponent extends React.Component {
   constructor () {
@@ -48,6 +49,7 @@ class BubbleComponent extends React.Component {
       <Bubble
         top={this.props.top + this.state.topOffset}
         left={this.props.left}
+        speed={this.props.speed}
         onMouseOver={this.onMouseOver}
       /> : null
   }
@@ -57,17 +59,23 @@ export default class Bubbles extends React.Component {
   constructor () {
     super()
     this.state = {bubbles: []}
-    // document.onmousemove = ({clientX, clientY}) => this.makeBubble(clientX, clientY)
-
     setInterval(() => this.makeBubble(), 200)
   }
 
   makeBubble () {
+    const {bubbles} = this.state
+
     const top = Math.floor(Math.random() * window.innerHeight)
     const left = Math.floor(Math.random() * window.innerWidth)
 
+    const lastFortyBubbles = bubbles.length > maxBubbles ?
+      loc_array[loc_array.length - 40] : bubbles
+
     this.setState({
-      bubbles: [...this.state.bubbles, {top, left}]
+      bubbles: [
+        ...lastFortyBubbles,
+        {top, left, speed: 10 + Math.floor(Math.random() * 200)}
+      ]
     })
   }
 
@@ -76,6 +84,7 @@ export default class Bubbles extends React.Component {
       <BubbleComponent
         top={bubble.top}
         left={bubble.left}
+        speed={bubble.speed}
         key={index}
       />
     )

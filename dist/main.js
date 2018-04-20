@@ -12577,10 +12577,11 @@ var _taggedTemplateLiteral2 = __webpack_require__(162);
 
 var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);\n  color: black;\n  font-family: Helvetica;\n  line-height: 22px;\n  font-size: 20px;\n'], ['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);\n  color: black;\n  font-family: Helvetica;\n  line-height: 22px;\n  font-size: 20px;\n']),
-    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n  transform: scaleX(1.2) skewY(-5deg);\n  margin-left: 100px;\n  margin-top: 50px;\n'], ['\n  transform: scaleX(1.2) skewY(-5deg);\n  margin-left: 100px;\n  margin-top: 50px;\n']),
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange,   green, blue);\n  color: black;\n  font-family: Helvetica;\n  line-height: 30px;\n  font-size: 20px;\n  align-items: \xE7enter;\n'], ['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange,   green, blue);\n  color: black;\n  font-family: Helvetica;\n  line-height: 30px;\n  font-size: 20px;\n  align-items: \xE7enter;\n']),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n  margin: 20px;\n  color: white;\n  padding: 0 30px;\n  border: 10px solid white;\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  justify-content: center;\n  text-align: center;\n'], ['\n  margin: 20px;\n  color: white;\n  padding: 0 30px;\n  border: 10px solid white;\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  justify-content: center;\n  text-align: center;\n']),
     _templateObject3 = (0, _taggedTemplateLiteral3.default)(['\n  margin: 30px 0 10px;\n'], ['\n  margin: 30px 0 10px;\n']),
-    _templateObject4 = (0, _taggedTemplateLiteral3.default)(['\n  color: black;\n  text-decoration: none;\n  margin-right: 5px;\n  display: block;\n  &:hover {\n    padding-left: 5px;\n  }\n'], ['\n  color: black;\n  text-decoration: none;\n  margin-right: 5px;\n  display: block;\n  &:hover {\n    padding-left: 5px;\n  }\n']);
+    _templateObject4 = (0, _taggedTemplateLiteral3.default)(['\n  text-align: center;\n'], ['\n  text-align: center;\n']),
+    _templateObject5 = (0, _taggedTemplateLiteral3.default)(['\n  color: white;\n  text-decoration: none;\n  flex-shrink: 1;\n  transition: all 0.5s ease-in-out;\n  margin: 0 5px;\n  display: inline-block;\n  &:hover {\n    transform: rotate(1440deg) scale(5);\n  }\n'], ['\n  color: white;\n  text-decoration: none;\n  flex-shrink: 1;\n  transition: all 0.5s ease-in-out;\n  margin: 0 5px;\n  display: inline-block;\n  &:hover {\n    transform: rotate(1440deg) scale(5);\n  }\n']);
 
 var _react = __webpack_require__(78);
 
@@ -12605,7 +12606,9 @@ var Container = _styledComponents2.default.div(_templateObject);
 var Content = _styledComponents2.default.div(_templateObject2);
 
 var Title = _styledComponents2.default.h1(_templateObject3);
-var Link = _styledComponents2.default.a(_templateObject4);
+var Links = _styledComponents2.default.div(_templateObject4);
+
+var Link = _styledComponents2.default.a(_templateObject5);
 
 var App = function App() {
   return _react2.default.createElement(
@@ -12625,24 +12628,28 @@ var App = function App() {
         'PARTIES'
       ),
       _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/178381789371767/' },
-        '001'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/493753987662434/' },
-        '002'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/2266322840060534/' },
-        '003'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        '004'
+        Links,
+        null,
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/178381789371767/' },
+          '001'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/493753987662434/' },
+          '002'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/2266322840060534/' },
+          '003'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          '004'
+        )
       ),
       _react2.default.createElement(
         Title,
@@ -12650,39 +12657,43 @@ var App = function App() {
         'RADIO'
       ),
       _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        'APR 18'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        'MAR 18'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        'FEB 18'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        'JAN 18'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        'DEC 17'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        'NOV 17'
-      ),
-      _react2.default.createElement(
-        Link,
-        { href: 'https://www.facebook.com/events/217436759008807/' },
-        'OCT 17'
+        Links,
+        null,
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          'APR 18'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          'MAR 18'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          'FEB 18'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          'JAN 18'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          'DEC 17'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          'NOV 17'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.facebook.com/events/217436759008807/' },
+          'OCT 17'
+        )
       ),
       _react2.default.createElement(
         Title,
@@ -34125,7 +34136,7 @@ var _taggedTemplateLiteral2 = __webpack_require__(162);
 var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
 var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  from {\n    transform: translateY(100vh);\n  }\n\n  to {\n    transform: translateY(-500vh);\n  }\n'], ['\n  from {\n    transform: translateY(100vh);\n  }\n\n  to {\n    transform: translateY(-500vh);\n  }\n']),
-    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n  position: fixed;\n  top: ', 'px;\n  left: ', 'px;\n  width: 100px;\n  height: 100px;\n  opacity: 0.5;\n  border-radius: 50%;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  background: linear-gradient(to bottom, #3dff32 1%,#a189ff 100%);\n  opacity: 0.3;\n  animation: ', ' ', 's linear;\n'], ['\n  position: fixed;\n  top: ', 'px;\n  left: ', 'px;\n  width: 100px;\n  height: 100px;\n  opacity: 0.5;\n  border-radius: 50%;\n  border: 1px solid #ccc;\n  cursor: pointer;\n  background: linear-gradient(to bottom, #3dff32 1%,#a189ff 100%);\n  opacity: 0.3;\n  animation: ', ' ', 's linear;\n']);
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n  position: fixed;\n  top: ', 'px;\n  left: ', 'px;\n  width: 100px;\n  height: 100px;\n  opacity: 0.5;\n  border-radius: 50%;\n  cursor: pointer;\n  background: linear-gradient(to bottom, #3dff32 1%,#a189ff 100%);\n  opacity: 0.3;\n  animation: ', ' ', 's linear;\n'], ['\n  position: fixed;\n  top: ', 'px;\n  left: ', 'px;\n  width: 100px;\n  height: 100px;\n  opacity: 0.5;\n  border-radius: 50%;\n  cursor: pointer;\n  background: linear-gradient(to bottom, #3dff32 1%,#a189ff 100%);\n  opacity: 0.3;\n  animation: ', ' ', 's linear;\n']);
 
 var _react = __webpack_require__(78);
 
@@ -34147,7 +34158,11 @@ var Bubble = _styledComponents2.default.div(_templateObject2, function (props) {
   return props.top;
 }, function (props) {
   return props.left;
-}, float, Math.floor(Math.random() * 200));
+}, float, function (props) {
+  return props.speed;
+});
+
+var maxBubbles = 41;
 
 var BubbleComponent = function (_React$Component) {
   (0, _inherits3.default)(BubbleComponent, _React$Component);
@@ -34177,6 +34192,7 @@ var BubbleComponent = function (_React$Component) {
       return !this.state.hidden ? _react2.default.createElement(Bubble, {
         top: this.props.top + this.state.topOffset,
         left: this.props.left,
+        speed: this.props.speed,
         onMouseOver: this.onMouseOver
       }) : null;
     }
@@ -34192,10 +34208,8 @@ var Bubbles = function (_React$Component2) {
 
     var _this2 = (0, _possibleConstructorReturn3.default)(this, (Bubbles.__proto__ || (0, _getPrototypeOf2.default)(Bubbles)).call(this));
 
-    _this2.state = { bubbles: []
-      // document.onmousemove = ({clientX, clientY}) => this.makeBubble(clientX, clientY)
-
-    };setInterval(function () {
+    _this2.state = { bubbles: [] };
+    setInterval(function () {
       return _this2.makeBubble();
     }, 200);
     return _this2;
@@ -34204,11 +34218,16 @@ var Bubbles = function (_React$Component2) {
   (0, _createClass3.default)(Bubbles, [{
     key: 'makeBubble',
     value: function makeBubble() {
+      var bubbles = this.state.bubbles;
+
+
       var top = Math.floor(Math.random() * window.innerHeight);
       var left = Math.floor(Math.random() * window.innerWidth);
 
+      var lastFortyBubbles = bubbles.length > maxBubbles ? loc_array[loc_array.length - 40] : bubbles;
+
       this.setState({
-        bubbles: [].concat((0, _toConsumableArray3.default)(this.state.bubbles), [{ top: top, left: left }])
+        bubbles: [].concat((0, _toConsumableArray3.default)(lastFortyBubbles), [{ top: top, left: left, speed: 10 + Math.floor(Math.random() * 200) }])
       });
     }
   }, {
@@ -34218,6 +34237,7 @@ var Bubbles = function (_React$Component2) {
         return _react2.default.createElement(BubbleComponent, {
           top: bubble.top,
           left: bubble.left,
+          speed: bubble.speed,
           key: index
         });
       });
