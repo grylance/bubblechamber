@@ -50,8 +50,11 @@ const Content = styled.div`
 
 const Title = styled.h1`
   margin: 40px 0 0;
+  opacity: 0.3;
+  color: black;
 `
 const Links = styled.div`
+  font-weight: bold;
 `
 
 const Link = styled.a`
@@ -73,7 +76,7 @@ const Link = styled.a`
 const LinkTitle = styled.span`
   margin-right: 10px;
   opacity: 0.5;
-  display: inline-block
+  display: inline-block;
 `
 
 const Logo = styled.img`
