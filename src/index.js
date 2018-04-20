@@ -11,8 +11,8 @@ const Container = styled.div`
   background: linear-gradient(to right, orange,   green, blue);
   color: black;
   font-family: Helvetica;
-  line-height: 30px;
-  font-size: 20px;
+  line-height: 40px;
+  font-size: 25px;
   align-items: çenter;
 `
 
@@ -29,7 +29,8 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 30px 0 10px;
+  margin: 40px auto 5px;
+  border-bottom: 10px solid white;
 `
 const Links = styled.div`
   text-align: center;
