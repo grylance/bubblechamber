@@ -15,7 +15,7 @@ app.get('/*', (req, res) => {
       <!DOCTYPE html>
       <head>
         <title>BUBBLE CHAMBER</title>
-        <meta name="viewport" content="width=device-width" >
+        <meta name="viewport" content="width=device-width" />
         <link href='dist/base.css' rel='stylesheet' />
       </head>
       <body>
