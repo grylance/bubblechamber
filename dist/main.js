@@ -12577,11 +12577,16 @@ var _taggedTemplateLiteral2 = __webpack_require__(162);
 
 var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange,   green, blue);\n  color: black;\n  font-family: Helvetica;\n  line-height: 40px;\n  font-size: 25px;\n  align-items: \xE7enter;\n'], ['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange,   green, blue);\n  color: black;\n  font-family: Helvetica;\n  line-height: 40px;\n  font-size: 25px;\n  align-items: \xE7enter;\n']),
-    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n  margin: 20px;\n  color: white;\n  padding: 0 30px;\n  border: 10px solid white;\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  justify-content: center;\n  text-align: center;\n'], ['\n  margin: 20px;\n  color: white;\n  padding: 0 30px;\n  border: 10px solid white;\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  justify-content: center;\n  text-align: center;\n']),
-    _templateObject3 = (0, _taggedTemplateLiteral3.default)(['\n  margin: 40px auto 5px;\n  border-bottom: 10px solid white;\n'], ['\n  margin: 40px auto 5px;\n  border-bottom: 10px solid white;\n']),
-    _templateObject4 = (0, _taggedTemplateLiteral3.default)(['\n  text-align: center;\n'], ['\n  text-align: center;\n']),
-    _templateObject5 = (0, _taggedTemplateLiteral3.default)(['\n  color: white;\n  text-decoration: none;\n  flex-shrink: 1;\n  transition: all 0.5s ease-in-out;\n  margin: 0 5px;\n  display: inline-block;\n  &:hover {\n    transform: rotate(1440deg) scale(5);\n  }\n'], ['\n  color: white;\n  text-decoration: none;\n  flex-shrink: 1;\n  transition: all 0.5s ease-in-out;\n  margin: 0 5px;\n  display: inline-block;\n  &:hover {\n    transform: rotate(1440deg) scale(5);\n  }\n']);
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  from {transform:rotate(0deg);}\n  to {transform:rotate(360deg);}\n'], ['\n  from {transform:rotate(0deg);}\n  to {transform:rotate(360deg);}\n']),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n  0% {transform: translateX(0) translateY(0);}\n  20% {transform: translateX(-3px) translateY(4px);}\n  40% {transform: translateX(3px) translateY(-2px);}\n  50% {transform: translateX(0px) translateY(3px);}\n  70% {transform: translateX(-5px) translateY(0);}\n  80% {transform: translateX(-2px) translateY(3px);}\n  90% {transform: translateX(-1px) translateY(5px);}\n  100% {transform: translateX(0) translateY(0);}\n'], ['\n  0% {transform: translateX(0) translateY(0);}\n  20% {transform: translateX(-3px) translateY(4px);}\n  40% {transform: translateX(3px) translateY(-2px);}\n  50% {transform: translateX(0px) translateY(3px);}\n  70% {transform: translateX(-5px) translateY(0);}\n  80% {transform: translateX(-2px) translateY(3px);}\n  90% {transform: translateX(-1px) translateY(5px);}\n  100% {transform: translateX(0) translateY(0);}\n']),
+    _templateObject3 = (0, _taggedTemplateLiteral3.default)(['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange,   green, blue);\n  color: black;\n  font-family: Helvetica;\n  line-height: 40px;\n  font-size: 25px;\n  align-items: \xE7enter;\n'], ['\n  display: flex;\n  height: 100vh;\n  font-weight: bold;\n  background: linear-gradient(to right, orange,   green, blue);\n  color: black;\n  font-family: Helvetica;\n  line-height: 40px;\n  font-size: 25px;\n  align-items: \xE7enter;\n']),
+    _templateObject4 = (0, _taggedTemplateLiteral3.default)(['\n  margin: 20px;\n  color: white;\n  padding: 0 30px;\n  border: 10px solid white;\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  justify-content: center;\n  text-align: center;\n'], ['\n  margin: 20px;\n  color: white;\n  padding: 0 30px;\n  border: 10px solid white;\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  justify-content: center;\n  text-align: center;\n']),
+    _templateObject5 = (0, _taggedTemplateLiteral3.default)(['\n  margin: 40px 0 5px;\n  // border-bottom: 10px solid white;\n'], ['\n  margin: 40px 0 5px;\n  // border-bottom: 10px solid white;\n']),
+    _templateObject6 = (0, _taggedTemplateLiteral3.default)(['\n'], ['\n']),
+    _templateObject7 = (0, _taggedTemplateLiteral3.default)(['\n  color: white;\n  text-decoration: none;\n  flex-shrink: 1;\n  margin: 0 15px;\n  display: inline-block;\n  margin-right: 15px;\n  &:hover {\n    animation: ', ' 0.5s linear infinite;\n  }\n  span {\n    font-size: 10px;\n  }\n'], ['\n  color: white;\n  text-decoration: none;\n  flex-shrink: 1;\n  margin: 0 15px;\n  display: inline-block;\n  margin-right: 15px;\n  &:hover {\n    animation: ', ' 0.5s linear infinite;\n  }\n  span {\n    font-size: 10px;\n  }\n']),
+    _templateObject8 = (0, _taggedTemplateLiteral3.default)(['\n  margin-right: 10px;\n  opacity: 0.5;\n  display: inline-block\n'], ['\n  margin-right: 10px;\n  opacity: 0.5;\n  display: inline-block\n']),
+    _templateObject9 = (0, _taggedTemplateLiteral3.default)(['\n  margin: 0 auto;\n  width: 300px;\n'], ['\n  margin: 0 auto;\n  width: 300px;\n']),
+    _templateObject10 = (0, _taggedTemplateLiteral3.default)(['\n  animation: ', ' 1s linear infinite;\n'], ['\n  animation: ', ' 1s linear infinite;\n']);
 
 var _react = __webpack_require__(78);
 
@@ -12601,14 +12606,23 @@ var _Bubbles2 = _interopRequireDefault(_Bubbles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Container = _styledComponents2.default.div(_templateObject);
+var spin = (0, _styledComponents.keyframes)(_templateObject);
 
-var Content = _styledComponents2.default.div(_templateObject2);
+var pulse = (0, _styledComponents.keyframes)(_templateObject2);
 
-var Title = _styledComponents2.default.h1(_templateObject3);
-var Links = _styledComponents2.default.div(_templateObject4);
+var Container = _styledComponents2.default.div(_templateObject3);
 
-var Link = _styledComponents2.default.a(_templateObject5);
+var Content = _styledComponents2.default.div(_templateObject4);
+
+var Title = _styledComponents2.default.h1(_templateObject5);
+var Links = _styledComponents2.default.div(_templateObject6);
+
+var Link = _styledComponents2.default.a(_templateObject7, spin);
+var LinkTitle = _styledComponents2.default.span(_templateObject8);
+
+var Logo = _styledComponents2.default.img(_templateObject9);
+
+var UpcomingLink = Link.extend(_templateObject10, pulse);
 
 var App = function App() {
   return _react2.default.createElement(
@@ -12617,11 +12631,7 @@ var App = function App() {
     _react2.default.createElement(
       Content,
       null,
-      _react2.default.createElement(
-        Title,
-        null,
-        'BUBBLE CHAMBER'
-      ),
+      _react2.default.createElement(Logo, { src: 'dist/logo.png' }),
       _react2.default.createElement(
         Title,
         null,
@@ -12631,24 +12641,43 @@ var App = function App() {
         Links,
         null,
         _react2.default.createElement(
+          LinkTitle,
+          null,
+          '2018'
+        ),
+        _react2.default.createElement(
+          UpcomingLink,
+          { href: 'https://www.facebook.com/events/178381789371767/' },
+          'JUN'
+        ),
+        _react2.default.createElement(
           Link,
           { href: 'https://www.facebook.com/events/178381789371767/' },
-          '001'
+          'FEB'
         ),
         _react2.default.createElement(
           Link,
           { href: 'https://www.facebook.com/events/493753987662434/' },
-          '002'
+          'MAR'
+        )
+      ),
+      _react2.default.createElement(
+        Links,
+        null,
+        _react2.default.createElement(
+          LinkTitle,
+          null,
+          '2017'
         ),
         _react2.default.createElement(
           Link,
-          { href: 'https://www.facebook.com/events/2266322840060534/' },
-          '003'
+          { href: 'https://www.facebook.com/events/178381789371767/' },
+          'SEP'
         ),
         _react2.default.createElement(
           Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          '004'
+          { href: 'https://www.facebook.com/events/493753987662434/' },
+          'NOV'
         )
       ),
       _react2.default.createElement(
@@ -12660,50 +12689,55 @@ var App = function App() {
         Links,
         null,
         _react2.default.createElement(
-          Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          'APR 18'
+          LinkTitle,
+          null,
+          '2018'
         ),
         _react2.default.createElement(
           Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          'MAR 18'
+          { href: 'https://www.mixcloud.com/balamii/bubble-chamber-jan-2018/' },
+          'JAN'
         ),
         _react2.default.createElement(
           Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          'FEB 18'
+          { href: 'https://www.mixcloud.com/balamii/bubble-chamber-feb-2018/' },
+          'FEB'
         ),
         _react2.default.createElement(
           Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          'JAN 18'
+          { href: 'https://www.mixcloud.com/balamii/bubble-chamber-march-2018/' },
+          'MAR'
         ),
         _react2.default.createElement(
           Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          'DEC 17'
-        ),
-        _react2.default.createElement(
-          Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          'NOV 17'
-        ),
-        _react2.default.createElement(
-          Link,
-          { href: 'https://www.facebook.com/events/217436759008807/' },
-          'OCT 17'
+          { href: 'https://www.mixcloud.com/balamii/bubble-chamber-april-2018/' },
+          'APR'
         )
       ),
       _react2.default.createElement(
-        Title,
+        Links,
         null,
-        'BOOKINGS'
+        _react2.default.createElement(
+          LinkTitle,
+          null,
+          '2017'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.mixcloud.com/balamii/bubble-chamber-dec-2017/' },
+          'DEC'
+        ),
+        _react2.default.createElement(
+          Link,
+          { href: 'https://www.mixcloud.com/balamii/bubble-chamber-oct-2017/' },
+          'OCT'
+        )
       ),
+      _react2.default.createElement('br', null),
       _react2.default.createElement(
         Link,
         { href: 'mailto:bookings@bubblechamber.club' },
-        'bookings@bubblechamber.club'
+        'info@bubblechamber.club'
       )
     ),
     _react2.default.createElement(_Bubbles2.default, null)
