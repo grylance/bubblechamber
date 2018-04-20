@@ -27,9 +27,13 @@ const Container = styled.div`
   background: linear-gradient(to right, orange,   green, blue);
   color: black;
   font-family: Helvetica;
-  line-height: 40px;
-  font-size: 25px;
+  line-height: 30px;
+  font-size: 18px;
   align-items: çenter;
+  @media (min-width: 420px) {
+    line-height: 40px;
+    font-size: 25px;
+  }
 `
 
 const Content = styled.div`
@@ -45,8 +49,7 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 40px 0 5px;
-  // border-bottom: 10px solid white;
+  margin: 40px 0 0;
 `
 const Links = styled.div`
 `
@@ -55,7 +58,6 @@ const Link = styled.a`
   color: white;
   text-decoration: none;
   flex-shrink: 1;
-  margin: 0 15px;
   display: inline-block;
   margin-right: 15px;
   &:hover {
@@ -63,6 +65,9 @@ const Link = styled.a`
   }
   span {
     font-size: 10px;
+  }
+  @media (min-width: 420px) {
+    // margin: 0 10px;
   }
 `
 const LinkTitle = styled.span`
@@ -74,6 +79,9 @@ const LinkTitle = styled.span`
 const Logo = styled.img`
   margin: 0 auto;
   width: 300px;
+  @media (max-width: 420px) {
+    width: 200px;
+  }
 `
 
 const UpcomingLink = Link.extend`
