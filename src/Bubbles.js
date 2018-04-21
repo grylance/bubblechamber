@@ -8,7 +8,7 @@ const float = keyframes`
   }
 
   to {
-    transform: translateY(-500vh);
+    transform: translateY(-200vh);
   }
 `
 
@@ -69,12 +69,12 @@ export default class Bubbles extends React.Component {
     const left = Math.floor(Math.random() * window.innerWidth)
 
     const lastFortyBubbles = bubbles.length > maxBubbles ?
-      loc_array[loc_array.length - 40] : bubbles
+      bubbles[bubbles.length - 40] : bubbles
 
     this.setState({
       bubbles: [
         ...lastFortyBubbles,
-        {top, left, speed: 10 + Math.floor(Math.random() * 200)}
+        {top, left, speed: 10 + Math.floor(Math.random() * 50)}
       ]
     })
   }

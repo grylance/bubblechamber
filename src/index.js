@@ -49,7 +49,7 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 40px 0 0;
+  margin: 30px 0 0;
   opacity: 0.3;
   color: black;
 `
