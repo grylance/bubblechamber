@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
+import tapPlugin from 'react-tap-event-plugin'
+
+tapPlugin()
 
 import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
@@ -39,7 +42,10 @@ const Content = styled.div`
   flex-direction: column;
   flex-grow: 1;
   text-align: left;
-  padding: 30px;
+  padding: 15px;
+  @media (min-width: 500px) {
+    padding: 30px;
+  }
 `
 
 const Title = styled.h1`
@@ -80,7 +86,10 @@ const LinkTitle = styled.span`
 `
 
 const Logo = styled.img`
-  width: 250px;
+  width: 150px;
+  @media (min-width: 500px) {
+    width: 250px;
+  }
 `
 
 const UpcomingLink = Link.extend`
@@ -121,11 +130,11 @@ const App = () =>
       <Title>DATES</Title>
       <Links>
         <LinkTitle>13.05.18</LinkTitle>
-        <ScaleLink href=''>JADED</ScaleLink><br/>
-        <LinkTitle>07.06.18</LinkTitle>
-        <ScaleLink href=''>MEADOWS IN THE MOUNTAINS</ScaleLink><br/>
+        <ScaleLink href='https://www.residentadvisor.net/events/1085790'>JADED</ScaleLink><br/>
+        <LinkTitle>08.06.18</LinkTitle>
+        <ScaleLink href='http://www.meadowsinthemountains.com/'>MEADOWS IN THE MOUNTAINS</ScaleLink><br/>
         <LinkTitle>30.06.18</LinkTitle>
-        <ScaleLink href=''>THE TOWER</ScaleLink><br/>
+        <ScaleLink href='https://www.the-tower.co.uk/'>THE TOWER</ScaleLink><br/>
       </Links>
       <br />
       <Links>

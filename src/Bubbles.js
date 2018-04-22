@@ -52,8 +52,8 @@ class BubbleComponent extends React.Component {
         top={this.props.top + this.state.topOffset}
         left={this.props.left}
         speed={this.props.speed}
-        onMouseOver={!isMobile() ? this.hide : null}
-        onClick={isMobile() ? this.hide : null}
+        onMouseOver={this.hide}
+        onTouchTap={this.hide}
       /> : null
   }
 }

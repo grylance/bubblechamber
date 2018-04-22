@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
 const Input = styled.input`
-  width: 200px;
+  width: 180px;
   padding: 10px 15px;
   border: 0;
   outline: 0;
