@@ -34,7 +34,6 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  margin: 20px;
   color: white;
   text-align: left;
   padding: 15px;
