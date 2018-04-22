@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
+import isMobile from 'is-mobile'
 
 const float = keyframes`
   from {
@@ -23,26 +24,27 @@ const Bubble = styled.div`
   cursor: pointer;
   background: linear-gradient(to bottom, #3dff32 1%,#a189ff 100%);
   opacity: 0.3;
-  animation: ${float} ${props => props.speed}s linear;
+  animation: ${float} ${props => props.speed}s linear infinite;
 `
 
-const maxBubbles = 41
-
 class BubbleComponent extends React.Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.pop = new Audio('/dist/pop.mp3')
     this.pop.volume = 0.2
     this.state = {
       hidden: false,
       topOffset: 0,
     }
+    setTimeout(this.remove, props.speed * 1000)
   }
 
-  onMouseOver = () => {
+  hide = () => {
     this.pop.play()
-    this.setState({hidden: true})
+    this.remove()
   }
+
+  remove = () => this.setState({hidden: true})
 
   render () {
     return !this.state.hidden ?
@@ -50,7 +52,8 @@ class BubbleComponent extends React.Component {
         top={this.props.top + this.state.topOffset}
         left={this.props.left}
         speed={this.props.speed}
-        onMouseOver={this.onMouseOver}
+        onMouseOver={!isMobile() ? this.hide : null}
+        onClick={isMobile() ? this.hide : null}
       /> : null
   }
 }
@@ -59,7 +62,7 @@ export default class Bubbles extends React.Component {
   constructor () {
     super()
     this.state = {bubbles: []}
-    setInterval(() => this.makeBubble(), 200)
+    setInterval(() => this.makeBubble(), 400)
   }
 
   makeBubble () {
@@ -68,25 +71,26 @@ export default class Bubbles extends React.Component {
     const top = Math.floor(Math.random() * window.innerHeight)
     const left = Math.floor(Math.random() * window.innerWidth)
 
-    const lastFortyBubbles = bubbles.length > maxBubbles ?
-      bubbles[bubbles.length - 40] : bubbles
-
     this.setState({
       bubbles: [
-        ...lastFortyBubbles,
+        ...this.state.bubbles,
         {top, left, speed: 10 + Math.floor(Math.random() * 50)}
       ]
     })
   }
 
   render () {
-    return this.state.bubbles.map((bubble, index) =>
-      <BubbleComponent
-        top={bubble.top}
-        left={bubble.left}
-        speed={bubble.speed}
-        key={index}
-      />
+    return (
+      <div>
+        {this.state.bubbles.map((bubble, index) =>
+          <BubbleComponent
+            top={bubble.top}
+            left={bubble.left}
+            speed={bubble.speed}
+            key={index}
+          />
+        )}
+      </div>
     )
   }
 }
