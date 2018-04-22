@@ -10,7 +10,8 @@
     "build": "NODE_ENV=production webpack -p --progress",
     "build-dev": "NODE_ENV=development webpack --progress",
     "watch": "NODE_ENV=development webpack --watch-stdin & node server.js",
-    "dev": "yarn run build-dev && yarn run watch"
+    "dev": "yarn run build-dev && yarn run watch",
+    "heroku-postbuild": "NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
