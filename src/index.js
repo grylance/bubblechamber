@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
 
+import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
 
 const spin = keyframes`
@@ -22,30 +23,23 @@ const pulse = keyframes`
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   font-weight: bold;
   background: linear-gradient(to right, orange,   green, blue);
   color: black;
   font-family: Helvetica;
-  line-height: 30px;
-  font-size: 18px;
-  align-items: çenter;
-  @media (min-width: 420px) {
-    line-height: 40px;
-    font-size: 25px;
-  }
+  line-height: 28px;
+  font-size: 16px;
 `
 
 const Content = styled.div`
   margin: 20px;
   color: white;
-  padding: 0 30px;
-  border: 10px solid white;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: center;
-  text-align: center;
+  text-align: left;
+  padding: 30px;
 `
 
 const Title = styled.h1`
@@ -69,10 +63,16 @@ const Link = styled.a`
   span {
     font-size: 10px;
   }
-  @media (min-width: 420px) {
-    // margin: 0 10px;
+`
+
+const ScaleLink = Link.extend`
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    animation: none;
+    transform: scale(1.3);
   }
 `
+
 const LinkTitle = styled.span`
   margin-right: 10px;
   opacity: 0.5;
@@ -80,11 +80,7 @@ const LinkTitle = styled.span`
 `
 
 const Logo = styled.img`
-  margin: 0 auto;
-  width: 300px;
-  @media (max-width: 420px) {
-    width: 200px;
-  }
+  width: 250px;
 `
 
 const UpcomingLink = Link.extend`
@@ -95,6 +91,8 @@ const App = () =>
   <Container>
     <Content>
       <Logo src='dist/logo.png' />
+      <Title>GIVE US YOUR EMAIL</Title>
+      <EmailSignup />
       <Title>PARTIES</Title>
       <Links>
         <LinkTitle>2018</LinkTitle>
@@ -120,8 +118,19 @@ const App = () =>
         <Link href='https://www.mixcloud.com/balamii/bubble-chamber-dec-2017/'>DEC</Link>
         <Link href='https://www.mixcloud.com/balamii/bubble-chamber-oct-2017/'>OCT</Link>
       </Links>
+      <Title>DATES</Title>
+      <Links>
+        <LinkTitle>13.5.18</LinkTitle>
+        <ScaleLink href=''>JADED</ScaleLink><br/>
+        <LinkTitle>13.5.18</LinkTitle>
+        <ScaleLink href=''>MEADOWS IN THE MOUNTAINS</ScaleLink><br/>
+        <LinkTitle>13.5.18</LinkTitle>
+        <ScaleLink href=''>THE TOWER</ScaleLink><br/>
+      </Links>
       <br />
-      <Link href='mailto:bookings@bubblechamber.club'>info@bubblechamber.club</Link>
+      <Links>
+      <ScaleLink href='mailto:bookings@bubblechamber.club'>info@bubblechamber.club</ScaleLink>
+      </Links>
     </Content>
     <Bubbles />
   </Container>
