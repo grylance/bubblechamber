@@ -53,7 +53,6 @@ class BubbleComponent extends React.Component {
         left={this.props.left}
         speed={this.props.speed}
         onMouseOver={this.hide}
-        onTouchTap={this.hide}
       /> : null
   }
 }

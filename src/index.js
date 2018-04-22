@@ -1,9 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
-import tapPlugin from 'react-tap-event-plugin'
-
-tapPlugin()
+import isMobile from 'is-mobile'
 
 import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
@@ -33,6 +31,7 @@ const Container = styled.div`
   font-family: Helvetica;
   line-height: 28px;
   font-size: 16px;
+  position: relative;
 `
 
 const Content = styled.div`
@@ -46,6 +45,7 @@ const Content = styled.div`
   @media (min-width: 500px) {
     padding: 30px;
   }
+  z-index: ${() => isMobile() ? 1 : 0};
 `
 
 const Title = styled.h1`

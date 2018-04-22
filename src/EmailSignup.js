@@ -15,6 +15,8 @@ const Input = styled.input`
   border: 2px solid white;
   color: white;
   max-width: 100%;
+  border-radius: 0;
+  -webkit-appearance: none;
 `
 
 export default class EmailSignup extends React.Component {
