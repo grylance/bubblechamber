@@ -61,7 +61,7 @@ export default class Bubbles extends React.Component {
   constructor () {
     super()
     this.state = {bubbles: []}
-    setInterval(() => this.makeBubble(), 400)
+    // setInterval(() => this.makeBubble(), 400)
   }
 
   makeBubble () {

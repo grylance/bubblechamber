@@ -23,7 +23,6 @@ const pulse = keyframes`
 `
 
 const Container = styled.div`
-  display: flex;
   min-height: 100vh;
   font-weight: bold;
   background: linear-gradient(to right, orange,   green, blue);
@@ -37,9 +36,6 @@ const Container = styled.div`
 const Content = styled.div`
   margin: 20px;
   color: white;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
   text-align: left;
   padding: 15px;
   @media (min-width: 500px) {
