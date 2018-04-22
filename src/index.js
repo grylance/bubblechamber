@@ -91,7 +91,7 @@ const App = () =>
   <Container>
     <Content>
       <Logo src='dist/logo.png' />
-      <Title>GIVE US YOUR EMAIL</Title>
+      <Title>BUBBLE MAIL</Title>
       <EmailSignup />
       <Title>PARTIES</Title>
       <Links>
@@ -120,11 +120,11 @@ const App = () =>
       </Links>
       <Title>DATES</Title>
       <Links>
-        <LinkTitle>13.5.18</LinkTitle>
+        <LinkTitle>13.05.18</LinkTitle>
         <ScaleLink href=''>JADED</ScaleLink><br/>
-        <LinkTitle>13.5.18</LinkTitle>
+        <LinkTitle>07.06.18</LinkTitle>
         <ScaleLink href=''>MEADOWS IN THE MOUNTAINS</ScaleLink><br/>
-        <LinkTitle>13.5.18</LinkTitle>
+        <LinkTitle>30.06.18</LinkTitle>
         <ScaleLink href=''>THE TOWER</ScaleLink><br/>
       </Links>
       <br />

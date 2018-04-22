@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
 const Input = styled.input`
-  width: 250px;
+  width: 200px;
   padding: 10px 15px;
   border: 0;
   outline: 0;
@@ -14,6 +14,7 @@ const Input = styled.input`
   background: transparent;
   border: 2px solid white;
   color: white;
+  max-width: 100%;
 `
 
 export default class EmailSignup extends React.Component {
