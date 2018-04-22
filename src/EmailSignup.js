@@ -17,13 +17,12 @@ const Input = styled.input`
   max-width: 100%;
   border-radius: 0;
   -webkit-appearance: none;
+  ::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
 `
 
 export default class EmailSignup extends React.Component {
-  componentDidMount () {
-    ReactDOM.findDOMNode(this.textInput).focus()
-  }
-
   ref = input => {
     this.textInput = input
   }
@@ -38,6 +37,7 @@ export default class EmailSignup extends React.Component {
           name='MERGE0'
           id='MERGE0'
           ref={this.ref}
+          placeholder='GIVE US YOUR EMAIL'
         />
       </form>
     )
