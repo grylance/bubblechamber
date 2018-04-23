@@ -45,7 +45,6 @@ const Content = styled.div`
 
 const Title = styled.h1`
   @media (max-width: 700px) {
-    transform: scale(1, 1.2) rotate(1deg);
     margin: 30px 0 0;
     opacity: 0.5;
     color: black;    
