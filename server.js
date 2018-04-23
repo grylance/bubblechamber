@@ -1,29 +1,29 @@
 import React from 'react'
-import express from 'express'
-import path from 'path'
 import {renderToStaticMarkup} from 'react-dom/server'
+import Koa from 'koa'
+import serve from 'koa-static'
+import {ServerStyleSheet} from 'styled-components'
 
-import html from './src/Html'
+import Html from './src/Html'
+import Application from './src/App'
 
-import App from './src/App'
+const app = new Koa()
 
-const exApp = express()
 const isDeveloping = process.env.NODE_ENV !== 'production'
-const port = isDeveloping ? 2000 : process.env.PORT
 
-exApp.use('/dist', express.static(path.join(__dirname, '/dist')))
+app.use(serve('./dist'))
 
-exApp.get('/', (req, res) => {
-  res.send(
-    html(
-      renderToStaticMarkup(
-        React.createElement(App)
-      )
-    )
-  )
+app.use(require('koa-static')(__dirname + '/public'))
+
+app.use(async ctx => {
+  if (ctx.path === '/') {
+    const sheet = new ServerStyleSheet()
+    const App = React.createElement(Application)
+    const body = renderToStaticMarkup(sheet.collectStyles(App))
+    const styles = sheet.getStyleTags();
+
+    ctx.body = Html(body, styles)
+  }
 })
 
-exApp.listen(port, '0.0.0.0', error => {
-  if (error) console.log(error)
-  console.info('Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port)
-})
+app.listen(isDeveloping ? 2000 : process.env.PORT)

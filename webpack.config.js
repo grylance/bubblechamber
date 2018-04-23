@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
+const nodeExternals = require('webpack-node-externals')
 
 module.exports = [
   {
@@ -42,14 +43,15 @@ module.exports = [
   },
   {
     target: 'node',
-    context: __dirname,
+    context: path.join(__dirname, '/'),
+    externals: [nodeExternals()],
     entry: [
       'babel-polyfill',
       './server.js',
     ],
     output: {
-      path: __dirname,
-      filename: './server-compiled.js',
+      path: path.join(__dirname, '/'),
+      filename: 'server-compiled.js',
     },
     module: {
       rules: [
@@ -57,7 +59,7 @@ module.exports = [
           loader: 'babel-loader',
 
           include: [
-            path.resolve(__dirname, 'src'),
+            path.resolve(__dirname, '/'),
           ],
 
           test: /\.js$/,

@@ -1,13 +1,13 @@
-export default body => `
+export default (body, styles) =>     `
   <!DOCTYPE html>
-  <html>
-    <head>
-      <title>BUBBLE CHAMBER</title>
-      <link href='dist/base.css' rel='stylesheet' />
-    </head>
-    <body style="margin:0">
-      <div id="app">${body}</div>
-      <script src='dist/main.js#${Date.now()}'></script>
-    </body>
-  </html>
+  <head>
+    <title>BUBBLE CHAMBER</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href='base.css' rel='stylesheet' />
+    ${styles}
+  </head>
+  <body>
+    <div id='app'>${body}</div>
+    <script src='main.js#${Date.now()}'></script>
+  </body>
 `

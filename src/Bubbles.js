@@ -30,7 +30,7 @@ const Bubble = styled.div`
 class BubbleComponent extends React.Component {
   constructor (props) {
     super(props)
-    this.pop = new Audio('/dist/pop.mp3')
+    this.pop = new Audio('/pop.mp3')
     this.pop.volume = 0.2
     this.state = {
       hidden: false,

@@ -6,36 +6,36 @@ import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
 
 const spin = keyframes`
-  from {transform:rotate(0deg);}
-  to {transform:rotate(360deg);}
+  from {transform:rotate(0deg) scale(1, 1.5);}
+  to {transform:rotate(360deg) scale(1, 1.5);}
 `
 
 const pulse = keyframes`
-  0% {transform: translateX(0) translateY(0);}
-  20% {transform: translateX(-3px) translateY(4px);}
-  40% {transform: translateX(3px) translateY(-2px);}
-  50% {transform: translateX(0px) translateY(3px);}
-  70% {transform: translateX(-5px) translateY(0);}
-  80% {transform: translateX(-2px) translateY(3px);}
-  90% {transform: translateX(-1px) translateY(5px);}
-  100% {transform: translateX(0) translateY(0);}
+  0% {transform: translateX(0) translateY(0) scale(1, 1.5);}
+  20% {transform: translateX(-3px) translateY(4px) scale(1, 1.5);}
+  40% {transform: translateX(3px) translateY(-2px) scale(1, 1.5);}
+  50% {transform: translateX(0px) translateY(3px) scale(1, 1.5);}
+  70% {transform: translateX(-5px) translateY(0) scale(1, 1.5);}
+  80% {transform: translateX(-2px) translateY(3px) scale(1, 1.5);}
+  90% {transform: translateX(-1px) translateY(5px) scale(1, 1.5);}
+  100% {transform: translateX(0) translateY(0) scale(1, 1.5);}
 `
 
 const Container = styled.div`
   min-height: 100vh;
-  font-weight: bold;
   background: linear-gradient(to right, orange,   green, blue);
   color: black;
   font-family: Helvetica;
   line-height: 28px;
   font-size: 16px;
   position: relative;
+  font-weight: bold;
 `
 
 const Content = styled.div`
   color: white;
   text-align: left;
-  padding: 30px;
+  padding: 35px 30px;
   z-index: ${() => isMobile() ? 1 : 0};
   @media (min-width: 700px) {
     padding: 60px;
@@ -43,12 +43,20 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 30px 0 0;
-  opacity: 0.3;
-  color: black;
+  @media (max-width: 700px) {
+    transform: scale(1, 1.2) rotate(1deg);
+    margin: 30px 0 0;
+    opacity: 0.5;
+    color: black;    
+  }
+  @media (min-width: 700px) {
+    margin: 40px 0 10px;
+    font-family: 'Univox';
+    font-size: 24px;
+  }
 `
+
 const Links = styled.div`
-  font-weight: bold;
 `
 
 const Link = styled.a`
@@ -57,19 +65,19 @@ const Link = styled.a`
   flex-shrink: 1;
   display: inline-block;
   margin-right: 15px;
+  transform: scale(1, 1.1);
   &:hover {
-    animation: ${spin} 0.5s linear infinite;
+    animation: ${pulse} 0.5s linear infinite;
   }
   span {
     font-size: 10px;
   }
 `
 
-const ScaleLink = Link.extend`
+const RegularLink = Link.extend`
   transition: all 0.2s ease-in-out;
   &:hover {
-    animation: none;
-    transform: scale(1.3);
+    animation: ${pulse} 0.5s linear infinite;
   }
 `
 
@@ -77,6 +85,7 @@ const LinkTitle = styled.span`
   margin-right: 10px;
   opacity: 0.5;
   display: inline-block;
+  transform: scale(1, 1.1) rotate(1deg);
 `
 
 const Logo = styled.img`
@@ -87,14 +96,14 @@ const Logo = styled.img`
 `
 
 const UpcomingLink = Link.extend`
-  animation: ${pulse} 1s linear infinite;
+  animation: ${pulse} 2s linear infinite;
 `
 
 export default () =>
   <Container>
     <Content>
-      <Logo src='dist/logo.png' />
-      <Title>BUBBLE MAIL</Title>
+      <Logo src='logo.png' />
+      <Title>MAIL</Title>
       <EmailSignup />
       <Title>PARTIES</Title>
       <Links>
@@ -124,15 +133,15 @@ export default () =>
       <Title>DATES</Title>
       <Links>
         <LinkTitle>13.05.18</LinkTitle>
-        <ScaleLink href='https://www.residentadvisor.net/events/1085790'>JADED</ScaleLink><br/>
+        <RegularLink href='https://www.residentadvisor.net/events/1085790'>JADED</RegularLink><br/>
         <LinkTitle>08.06.18</LinkTitle>
-        <ScaleLink href='http://www.meadowsinthemountains.com/'>MEADOWS IN THE MOUNTAINS</ScaleLink><br/>
+        <RegularLink href='http://www.meadowsinthemountains.com/'>MEADOWS IN THE MOUNTAINS</RegularLink><br/>
         <LinkTitle>30.06.18</LinkTitle>
-        <ScaleLink href='https://www.the-tower.co.uk/'>THE TOWER</ScaleLink><br/>
+        <RegularLink href='https://www.the-tower.co.uk/'>THE TOWER</RegularLink><br/>
       </Links>
       <br />
       <Links>
-      <ScaleLink href='mailto:bookings@bubblechamber.club'>info@bubblechamber.club</ScaleLink>
+      <RegularLink href='mailto:bookings@bubblechamber.club'>info@bubblechamber.club</RegularLink>
       </Links>
     </Content>
     {typeof window !== 'undefined' &&    

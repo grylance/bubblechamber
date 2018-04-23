@@ -52,3 +52,8 @@ table {
 html {
 	min-height: 100%;
 }
+
+@font-face {
+  font-family: 'Univox';
+  src: url('univox.ttf')  format('truetype');
+}

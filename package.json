@@ -7,11 +7,11 @@
   "license": "MIT",
   "scripts": {
     "start": "node server-compiled.js",
-    "build-server": "webpack", 
+    "build-server": "NODE_ENV=production webpack",
     "build": "NODE_ENV=production yarn run build-server && webpack -p --progress",
     "build-dev": "NODE_ENV=development yarn run build-server && webpack --progress",
     "watch": "NODE_ENV=development webpack --watch-stdin & yarn run start",
-    "dev": "yarn run build-dev && yarn run watch",
+    "dev": "NODE_ENV=development yarn run build-dev && yarn run watch",
     "heroku-postbuild": "NODE_ENV=production webpack -p"
   },
   "dependencies": {
@@ -25,15 +25,17 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",
     "is-mobile": "^0.2.2",
+    "koa": "^2.5.0",
+    "koa-static": "^4.0.2",
     "path": "^0.12.7",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "styled-components": "^3.2.6",
     "url-loader": "^1.0.1",
     "webpack": "3",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^2.0.14",
+    "webpack-node-externals": "^1.7.2"
   }
 }
