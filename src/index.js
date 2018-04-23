@@ -38,6 +38,9 @@ const Content = styled.div`
   text-align: left;
   padding: 30px;
   z-index: ${() => isMobile() ? 1 : 0};
+  @media (min-width: 700px) {
+    padding: 60px;
+  }
 `
 
 const Title = styled.h1`
