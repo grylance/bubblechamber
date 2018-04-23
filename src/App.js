@@ -6,8 +6,8 @@ import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
 
 const spin = keyframes`
-  from {transform:rotate(0deg) scale(1, 1.5);}
-  to {transform:rotate(360deg) scale(1, 1.5);}
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 `
 
 const pulse = keyframes`
@@ -30,6 +30,7 @@ const Container = styled.div`
   font-size: 16px;
   position: relative;
   font-weight: bold;
+  -webkit-font-smoothing: antialiased;
 `
 
 const Content = styled.div`
@@ -52,7 +53,9 @@ const Title = styled.h1`
   @media (min-width: 700px) {
     margin: 40px 0 10px;
     font-family: 'Univox';
-    font-size: 24px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 2px 1px rgba(0,0,0,0.7);
   }
 `
 
@@ -65,7 +68,6 @@ const Link = styled.a`
   flex-shrink: 1;
   display: inline-block;
   margin-right: 15px;
-  transform: scale(1, 1.1);
   &:hover {
     animation: ${pulse} 0.5s linear infinite;
   }
@@ -85,7 +87,6 @@ const LinkTitle = styled.span`
   margin-right: 10px;
   opacity: 0.5;
   display: inline-block;
-  transform: scale(1, 1.1) rotate(1deg);
 `
 
 const Logo = styled.img`
@@ -96,7 +97,7 @@ const Logo = styled.img`
 `
 
 const UpcomingLink = Link.extend`
-  animation: ${pulse} 2s linear infinite;
+  animation: ${spin} 1s linear infinite;
 `
 
 export default () =>
