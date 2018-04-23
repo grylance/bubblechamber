@@ -6,10 +6,11 @@
   "author": "info@bubblechamber.club",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "build": "NODE_ENV=production webpack -p --progress",
-    "build-dev": "NODE_ENV=development webpack --progress",
-    "watch": "NODE_ENV=development webpack --watch-stdin & node server.js",
+    "start": "node server-compiled.js",
+    "build-server": "webpack", 
+    "build": "NODE_ENV=production yarn run build-server && webpack -p --progress",
+    "build-dev": "NODE_ENV=development yarn run build-server && webpack --progress",
+    "watch": "NODE_ENV=development webpack --watch-stdin & yarn run start",
     "dev": "yarn run build-dev && yarn run watch",
     "heroku-postbuild": "NODE_ENV=production webpack -p"
   },

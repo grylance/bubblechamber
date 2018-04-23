@@ -40,4 +40,37 @@ module.exports = [
       new webpack.EnvironmentPlugin(['NODE_ENV']),
     ],
   },
+  {
+    target: 'node',
+    context: __dirname,
+    entry: [
+      'babel-polyfill',
+      './server.js',
+    ],
+    output: {
+      path: __dirname,
+      filename: './server-compiled.js',
+    },
+    module: {
+      rules: [
+        {
+          loader: 'babel-loader',
+
+          include: [
+            path.resolve(__dirname, 'src'),
+          ],
+
+          test: /\.js$/,
+
+          query: {
+            plugins: ['transform-runtime'],
+            presets: ['es2015', 'stage-0', 'react'],
+          },
+        },
+      ]
+    },
+    plugins: [
+      new webpack.EnvironmentPlugin(['NODE_ENV']),
+    ],
+  },
 ]
