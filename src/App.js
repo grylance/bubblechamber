@@ -4,6 +4,7 @@ import isMobile from 'is-mobile'
 
 import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
+import Sphere from './Sphere'
 
 const spin = keyframes`
   from {transform:rotate(0deg);}
@@ -31,6 +32,9 @@ const Container = styled.div`
   position: relative;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
+  @media (min-width: 1000px) {
+    width: 50vw;
+  }
 `
 
 const Content = styled.div`
@@ -144,6 +148,7 @@ export default () =>
       <RegularLink href='mailto:bookings@bubblechamber.club'>info@bubblechamber.club</RegularLink>
       </Links>
     </Content>
+    <Sphere />
     {typeof window !== 'undefined' &&    
       <Bubbles />
     }
