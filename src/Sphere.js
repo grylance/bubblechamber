@@ -7,13 +7,13 @@ const Container = styled.div`
   display: none;
   @media (min-width: 1000px) {
     background: #444;
-    height: calc(100vh - 40px);
-    width: 50vw;
-    top: 0;
-    right: 0;
+    height: calc(100vh - 80px);
+    width: calc(50vw - 80px);
+    top: 40px;
+    right: 40px;
     position: fixed;
     display: block;
-    margin: 20px;
+    z-index: 2;
   }
 `
 
@@ -45,8 +45,8 @@ export default class Sphere extends React.Component {
   }
 
   render () {
-    const width = window.innerWidth / 2
-    const height = window.innerHeight
+    const width = (window.innerWidth / 2) - 80
+    const height = window.innerHeight - 80
 
 
     return (
