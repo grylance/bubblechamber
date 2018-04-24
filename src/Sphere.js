@@ -6,6 +6,7 @@ import styled, {keyframes} from 'styled-components'
 const Container = styled.div`
   display: none;
   @media (min-width: 1000px) {
+    background: #444;
     height: 100vh;
     width: 50vw;
     top: 0;
@@ -54,6 +55,7 @@ export default class Sphere extends React.Component {
           width={width}
           height={height}
           onAnimate={this.onAnimate}
+          alpha={true}
         >
           <scene>
             <perspectiveCamera
