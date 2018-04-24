@@ -6,7 +6,7 @@ import styled, {keyframes} from 'styled-components'
 const Container = styled.div`
   display: none;
   @media (min-width: 1000px) {
-    background: #444;
+    background: #666;
     height: calc(100vh - 80px);
     width: calc(50vw - 80px);
     top: 40px;
@@ -69,8 +69,8 @@ export default class Sphere extends React.Component {
             />
             <mesh rotation={this.state.rotation}>
               <sphereGeometry
-                widthSegments={20}
-                heightSegments={20}
+                widthSegments={50}
+                heightSegments={50}
                 radius={2}
               />
               <meshBasicMaterial
