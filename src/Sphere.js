@@ -7,12 +7,13 @@ const Container = styled.div`
   display: none;
   @media (min-width: 1000px) {
     background: #444;
-    height: 100vh;
+    height: calc(100vh - 40px);
     width: 50vw;
     top: 0;
     right: 0;
     position: fixed;
     display: block;
+    margin: 20px;
   }
 `
 
