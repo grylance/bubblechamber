@@ -6,6 +6,8 @@ import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
 import Sphere from './Sphere'
 
+const hasWindow = typeof window !== 'undefined'
+
 const spin = keyframes`
   from {transform:rotate(0deg);}
   to {transform:rotate(360deg);}
@@ -51,7 +53,7 @@ const Title = styled.h1`
   @media (max-width: 700px) {
     margin: 30px 0 0;
     opacity: 0.5;
-    color: black;    
+    color: black;
   }
   @media (min-width: 700px) {
     margin: 40px 0 10px;
@@ -148,8 +150,6 @@ export default () =>
       <RegularLink href='mailto:bookings@bubblechamber.club'>info@bubblechamber.club</RegularLink>
       </Links>
     </Content>
-    <Sphere />
-    {typeof window !== 'undefined' &&    
-      <Bubbles />
-    }
+    {hasWindow && <Sphere />}
+    {hasWindow && <Bubbles />}
   </Container>
