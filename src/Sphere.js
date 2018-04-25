@@ -7,14 +7,14 @@ const Container = styled.button`
   display: none;
   @media (min-width: 1000px) {
     background: #666;
-    height: 100vh;
-    width: 50vw;
-    top: 0;
-    right: 0;
+    height: calc(100vh - 40px);
+    width: calc(50vw - 20px);
+    top: 20px;
+    right: 20px;
     position: fixed;
     display: block;
     z-index: 2;
-    cursor: not-allowed;
+    cursor: pointer;
     border: 0;
     outline: 0;
   }

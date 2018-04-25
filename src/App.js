@@ -33,9 +33,6 @@ const Container = styled.div`
   font-size: 24px;
   position: relative;
   -webkit-font-smoothing: antialiased;
-  @media (min-width: 1000px) {
-    width: 50%;
-  }
 `
 
 const Content = styled.div`
@@ -45,6 +42,9 @@ const Content = styled.div`
   z-index: ${() => isMobile() ? 1 : 0};
   @media (min-width: 700px) {
     padding: 60px;
+  }
+  @media (min-width: 1000px) {
+    width: 50%;
   }
 `
 

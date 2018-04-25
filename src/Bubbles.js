@@ -17,8 +17,8 @@ const Bubble = styled.div`
   position: fixed;
   top: ${props => props.top}px;
   left: ${props => props.left}px;
-  width: 100px;
-  height: 100px;
+  width: ${props => props.size}px;
+  height: ${props => props.size}px;
   opacity: 0.5;
   border-radius: 50%;
   cursor: pointer;
@@ -52,6 +52,7 @@ class BubbleComponent extends React.Component {
         top={this.props.top + this.state.topOffset}
         left={this.props.left}
         speed={this.props.speed}
+        size={this.props.size}
         onMouseOver={this.hide}
       /> : null
   }
@@ -80,7 +81,12 @@ export default class Bubbles extends React.Component {
     this.setState({
       bubbles: [
         ...this.state.bubbles,
-        {top, left, speed: 10 + Math.floor(Math.random() * 50)}
+        {
+          top: Math.floor(Math.random() * window.innerHeight),
+          left: Math.floor(Math.random() * window.innerWidth) - 50,
+          size: Math.floor(Math.random() * 50) + 50,
+          speed: Math.floor(Math.random() * 30) + 10,
+        },
       ]
     })
   }
@@ -90,9 +96,7 @@ export default class Bubbles extends React.Component {
       <div>
         {this.state.bubbles.map((bubble, index) =>
           <BubbleComponent
-            top={bubble.top}
-            left={bubble.left}
-            speed={bubble.speed}
+            {...bubble}
             key={index}
           />
         )}
