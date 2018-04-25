@@ -14,7 +14,7 @@ const Container = styled.button`
     position: fixed;
     display: block;
     z-index: 2;
-    cursor: copy;
+    cursor: not-allowed;
     border: 0;
     outline: 0;
   }
@@ -34,8 +34,8 @@ export default class Sphere extends React.Component {
 
     this.state = {
       rotation: new THREE.Euler(),
-      speed: 0.001,
-      segments: 10,
+      speed: 0.01,
+      segments: 1,
     }
 
 
@@ -57,7 +57,7 @@ export default class Sphere extends React.Component {
       rotation: new THREE.Euler(
         this.state.rotation.x + this.state.speed,
         this.state.rotation.y + this.state.speed,
-        0
+        50
       ),
     })
   }
