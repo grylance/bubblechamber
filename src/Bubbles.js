@@ -27,11 +27,20 @@ const Bubble = styled.div`
   animation: ${float} ${props => props.speed}s linear infinite;
 `
 
+let drone = new Audio('/drone.mp3') 
+drone.volume = 0.4
+drone.play()
+drone.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play()
+}, false)
+
+
 class BubbleComponent extends React.Component {
   constructor (props) {
     super(props)
     this.pop = new Audio('/pop.mp3')
-    this.pop.volume = 0.2
+    this.pop.volume = 0.5
     this.state = {
       hidden: false,
       topOffset: 0,
@@ -61,7 +70,7 @@ export default class Bubbles extends React.Component {
   constructor () {
     super()
     this.state = {bubbles: []}
-    setInterval(() => this.makeBubble(), 200)
+    setInterval(() => this.makeBubble(), 500)
   }
 
   makeBubble () {
