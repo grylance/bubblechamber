@@ -63,8 +63,8 @@ export default class Bubbles extends React.Component {
     this.state = {bubbles: []}
     setInterval(() => this.makeBubble(), 500)
 
-    let drone = new Audio('/drone2.ogg')
-    drone.volume = 0.4
+    let drone = new Audio('/drone.ogg')
+    drone.volume = 0.3
     drone.play()
     drone.addEventListener('ended', () => {
       drone.play()

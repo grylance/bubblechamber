@@ -37,13 +37,20 @@ export default class Sphere extends React.Component {
       speed: 0.001,
       segments: 10,
     }
+
+
   }
 
-  onClick = () =>
+  onClick = () => {
+    const click = new Audio('/click.ogg')
+    click.volume = 0.3
+    click.play()
+
     this.setState({
       speed: this.state.speed + 0.001,
       segments: this.state.segments + 1,
     })
+  }
 
   onAnimate = () => {
     this.setState({
