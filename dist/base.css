@@ -57,3 +57,13 @@ html {
   font-family: 'Univox';
   src: url('univox.ttf')  format('truetype');
 }
+
+@font-face {
+  font-family: 'Plank';
+  src: url('plank.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Interceptor';
+  src: url('interceptor.otf');
+}

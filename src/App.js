@@ -29,14 +29,10 @@ const Container = styled.div`
   background: linear-gradient(to bottom, orange, green, blue);
   color: black;
   font-family: Helvetica;
-  line-height: 28px;
-  font-size: 16px;
+  line-height: 30px;
+  font-size: 24px;
   position: relative;
-  font-weight: bold;
   -webkit-font-smoothing: antialiased;
-  @media (min-width: 1000px) {
-    // width: 50vw;
-  }
 `
 
 const Content = styled.div`
@@ -50,21 +46,14 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  @media (max-width: 700px) {
-    margin: 30px 0 0;
-    opacity: 0.5;
-    color: black;
-  }
-  @media (min-width: 700px) {
-    margin: 40px 0 10px;
-    font-family: 'Univox';
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-shadow: 2px 1px rgba(0,0,0,0.7);
-  }
+  margin: 40px 0 10px;
+  font-family: 'Plank';
+  font-size: 20px;
 `
 
 const Links = styled.div`
+  font-family: Plank;
+  font-weight: normal;
 `
 
 const Link = styled.a`
@@ -114,14 +103,14 @@ export default () =>
       <Title>PARTIES</Title>
       <Links>
         <LinkTitle>2018</LinkTitle>
-        <Link href='https://www.facebook.com/events/2266322840060534/'>FEB</Link>
-        <Link href='https://www.facebook.com/events/217436759008807/'>MAR</Link>
-        <UpcomingLink href='https://www.facebook.com/events/178381789371767/'>JUN</UpcomingLink>
+        <Link href='https://www.facebook.com/events/2266322840060534/'>005</Link>
+        <Link href='https://www.facebook.com/events/217436759008807/'>004</Link>
+        <UpcomingLink href='https://www.facebook.com/events/178381789371767/'>003</UpcomingLink>
       </Links>
       <Links>
         <LinkTitle>2017</LinkTitle>
-        <Link href='https://www.facebook.com/events/493753987662434/'>NOV</Link>
-        <Link href='https://www.facebook.com/events/178381789371767/'>SEP</Link>
+        <Link href='https://www.facebook.com/events/493753987662434/'>002</Link>
+        <Link href='https://www.facebook.com/events/178381789371767/'>001</Link>
       </Links>
       <Title>RADIO</Title>
       <Links>
@@ -147,7 +136,8 @@ export default () =>
       </Links>
       <br />
       <Links>
-      <RegularLink href='mailto:bookings@bubblechamber.club'>info@bubblechamber.club</RegularLink>
+      <Title>Contact</Title>
+      <RegularLink href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</RegularLink>
       </Links>
     </Content>
     {hasWindow && <Sphere />}
