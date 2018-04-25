@@ -48,7 +48,6 @@ const Content = styled.div`
 const Title = styled.h1`
   margin: 40px 0 10px;
   font-family: 'Plank';
-  font-size: 20px;
 `
 
 const Links = styled.div`
@@ -59,7 +58,6 @@ const Links = styled.div`
 const Link = styled.a`
   color: white;
   text-decoration: none;
-  flex-shrink: 1;
   display: inline-block;
   margin-right: 15px;
   &:hover {
@@ -134,11 +132,9 @@ export default () =>
         <LinkTitle>30.06.18</LinkTitle>
         <RegularLink href='https://www.the-tower.co.uk/'>THE TOWER</RegularLink><br/>
       </Links>
-      <br />
-      <Links>
-      <Title>Contact</Title>
-      <RegularLink href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</RegularLink>
-      </Links>
+      <Title>
+        <RegularLink href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</RegularLink>
+      </Title>
     </Content>
     {hasWindow && <Sphere />}
     {hasWindow && <Bubbles />}
