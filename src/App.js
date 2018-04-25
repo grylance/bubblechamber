@@ -26,13 +26,16 @@ const pulse = keyframes`
 
 const Container = styled.div`
   min-height: 100vh;
-  background: linear-gradient(to bottom, orange, green, blue);
+  background: linear-gradient(to bottom right, orange, green, blue);
   color: black;
   font-family: Helvetica;
   line-height: 30px;
   font-size: 24px;
   position: relative;
   -webkit-font-smoothing: antialiased;
+  @media (min-width: 1000px) {
+    width: 50%;
+  }
 `
 
 const Content = styled.div`
