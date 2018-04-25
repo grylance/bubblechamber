@@ -3,7 +3,7 @@ import React3 from 'react-three-renderer'
 import * as THREE from 'three'
 import styled, {keyframes} from 'styled-components'
 
-const Container = styled.div`
+const Container = styled.button`
   display: none;
   @media (min-width: 1000px) {
     background: #666;
@@ -14,6 +14,9 @@ const Container = styled.div`
     position: fixed;
     display: block;
     z-index: 2;
+    cursor: copy;
+    border: 0;
+    outline: 0;
   }
 `
 
@@ -31,14 +34,22 @@ export default class Sphere extends React.Component {
 
     this.state = {
       rotation: new THREE.Euler(),
+      speed: 0.001,
+      segments: 10,
     }
   }
+
+  onClick = () =>
+    this.setState({
+      speed: this.state.speed + 0.001,
+      segments: this.state.segments + 1,
+    })
 
   onAnimate = () => {
     this.setState({
       rotation: new THREE.Euler(
-        this.state.rotation.x + 0.01,
-        this.state.rotation.y + 0.01,
+        this.state.rotation.x + this.state.speed,
+        this.state.rotation.y + this.state.speed,
         0
       ),
     })
@@ -50,7 +61,7 @@ export default class Sphere extends React.Component {
 
 
     return (
-      <Container>
+      <Container onClick={this.onClick}>
         <React3
           mainCamera='camera'
           width={width}
@@ -69,8 +80,8 @@ export default class Sphere extends React.Component {
             />
             <mesh rotation={this.state.rotation}>
               <sphereGeometry
-                widthSegments={50}
-                heightSegments={50}
+                widthSegments={this.state.segments}
+                heightSegments={this.state.segments}
                 radius={2}
               />
               <meshBasicMaterial
