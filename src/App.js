@@ -99,7 +99,7 @@ export default () =>
   <Container>
     <Content>
       <Logo src='logo.png' />
-      <Title>MAIL</Title>
+      <Title>EMAIL</Title>
       <EmailSignup />
       <Title>PARTIES</Title>
       <Links>
