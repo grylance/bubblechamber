@@ -4,7 +4,7 @@ import * as THREE from 'three'
 import styled, {keyframes} from 'styled-components'
 import isMobile from 'is-mobile'
 
-const Container = styled.button`
+const Container = styled.div`
   background: rgba(0,0,0,0);
   top: 0;
   right: 0;
@@ -14,8 +14,6 @@ const Container = styled.button`
   @media (min-width: 1000px) {
     width: 50vw;
     cursor: pointer;
-    border: 0;
-    outline: 0;
   }
 `
 
