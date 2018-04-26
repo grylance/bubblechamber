@@ -92,10 +92,7 @@ const LinkTitle = styled.span`
 `
 
 const Logo = styled.img`
-  width: 150px;
-  @media (min-width: 500px) {
-    width: 250px;
-  }
+  width: 250px;
 `
 
 const UpcomingLink = Link.extend`
