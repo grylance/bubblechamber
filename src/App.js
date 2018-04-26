@@ -27,6 +27,7 @@ const pulse = keyframes`
 const Container = styled.div`
   min-height: 100vh;
   background: linear-gradient(to bottom right, orange, blue);
+  background: orange;
   font-family: Helvetica;
   line-height: 30px;
   font-size: 24px;

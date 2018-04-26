@@ -91,7 +91,7 @@ export default class Sphere extends React.Component {
                 radius={2}
               />
               <meshBasicMaterial
-                color={0x888888}
+                color={0xFFFFFF}
                 wireframe
               />
             </mesh>
