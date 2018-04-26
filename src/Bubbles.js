@@ -22,7 +22,7 @@ const Bubble = styled.div`
   border-radius: 50%;
   cursor: pointer;
   background: white;
-  border: 5px solid orange;
+  border: 2px solid orange;
   animation: ${float} ${props => props.speed}s linear infinite;
 `
 
