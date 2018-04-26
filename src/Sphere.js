@@ -2,15 +2,17 @@ import React from 'react'
 import React3 from 'react-three-renderer'
 import * as THREE from 'three'
 import styled, {keyframes} from 'styled-components'
+import isMobile from 'is-mobile'
 
 const Container = styled.button`
   background: rgba(0,0,0,0);
   top: 0;
   right: 0;
   position: fixed;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   @media (min-width: 1000px) {
+    width: 50vw;
     cursor: pointer;
     border: 0;
     outline: 0;
@@ -60,7 +62,8 @@ export default class Sphere extends React.Component {
   }
 
   render () {
-    const width = (window.innerWidth / 2)
+    const width = isMobile() ?
+      window.innerWidth : (window.innerWidth / 2)
     const height = window.innerHeight
 
 

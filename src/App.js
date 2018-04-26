@@ -33,6 +33,7 @@ const Container = styled.div`
   font-size: 24px;
   position: relative;
   -webkit-font-smoothing: antialiased;
+  overflow: hidden;
 `
 
 const Content = styled.div`
@@ -40,6 +41,7 @@ const Content = styled.div`
   text-align: left;
   padding: 35px 30px;
   z-index: ${() => isMobile() ? 10 : 0};
+  position: relative;
   @media (min-width: 700px) {
     padding: 60px;
   }
@@ -146,5 +148,5 @@ export default () =>
       </Links>
     </Content>
     {hasWindow && <Sphere />}
-    {hasWindow && <Bubbles />}
+    {(hasWindow && !isMobile()) && <Bubbles />}
   </Container>
