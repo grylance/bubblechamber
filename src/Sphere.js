@@ -11,6 +11,9 @@ const Container = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
+  &:hover {
+    transform: scale(1.05);
+  }
   @media (min-width: 1000px) {
     width: 50vw;
     cursor: pointer;
@@ -26,37 +29,40 @@ export default class Sphere extends React.Component {
   constructor () {
     super()
     this.cameraPosition = new THREE.Vector3(0, 0, 5)
-    this.lightPosition = new THREE.Vector3(0, 500, 2000)
-    this.lightTarget = new THREE.Vector3(0, 0, 0)
 
     this.state = {
       rotation: new THREE.Euler(),
-      speed: 0.01,
-      segments: 1,
     }
 
+    this.drone = new Audio('/drone.ogg')
+    this.drone.volume = 0.2
+    this.drone.play()
+    this.drone.addEventListener('ended', () => this.drone.play())
 
-  }
-
-  onClick = () => {
-    const click = new Audio('/click.ogg')
-    click.volume = 0.3
-    click.play()
-
-    this.setState({
-      speed: this.state.speed + 0.001,
-      segments: this.state.segments + 1,
-    })
+    this.bleep = new Audio('/bleep.ogg')
+    this.bleep.volume = 0
+    this.bleep.play()
+    this.bleep.addEventListener('ended', () => this.bleep.play())
   }
 
   onAnimate = () => {
+    const speed = this.props.toggled ? 0.03 : 0.06
+
     this.setState({
       rotation: new THREE.Euler(
-        this.state.rotation.x + this.state.speed,
-        this.state.rotation.y + this.state.speed,
+        this.state.rotation.x + speed,
+        this.state.rotation.y + speed,
         50
       ),
     })
+
+    if (this.props.toggled) {
+      this.drone.volume = 0.3
+      this.bleep.volume = 0
+    } else {
+      this.bleep.volume = 0.3
+      this.drone.volume = 0
+    }
   }
 
   render () {
@@ -66,7 +72,7 @@ export default class Sphere extends React.Component {
 
 
     return (
-      <Container onClick={this.onClick}>
+      <Container onClick={this.props.toggle}>
         <React3
           mainCamera='camera'
           width={width}
@@ -85,9 +91,9 @@ export default class Sphere extends React.Component {
             />
             <mesh rotation={this.state.rotation}>
               <sphereGeometry
-                widthSegments={this.state.segments}
-                heightSegments={this.state.segments}
-                radius={2}
+                widthSegments={this.props.toggled ? 5 : 20}
+                heightSegments={this.props.toggled ? 5 : 20}
+                radius={this.props.toggled ? 1.7 : 2.5}
               />
               <meshBasicMaterial
                 color={0xFFFFFF}
