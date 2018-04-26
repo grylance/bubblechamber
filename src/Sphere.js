@@ -1,7 +1,7 @@
 import React from 'react'
 import React3 from 'react-three-renderer'
 import * as THREE from 'three'
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 import isMobile from 'is-mobile'
 
 const Container = styled.div`
@@ -19,11 +19,6 @@ const Container = styled.div`
     cursor: pointer;
   }
 `
-
-let Scene = React3.Scene
-let Camera = React3.Camera
-let AmbientLight = React3.AmbientLight
-let Mesh = React3.Mesh
 
 export default class Sphere extends React.Component {
   constructor () {
@@ -69,7 +64,6 @@ export default class Sphere extends React.Component {
     const width = isMobile() ?
       window.innerWidth : (window.innerWidth / 2)
     const height = window.innerHeight
-
 
     return (
       <Container onClick={this.props.toggle}>

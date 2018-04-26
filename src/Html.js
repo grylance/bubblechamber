@@ -1,4 +1,4 @@
-export default (body, styles) =>     `
+export default (body, styles) => `
   <!DOCTYPE html>
   <head>
     <title>BUBBLE CHAMBER</title>

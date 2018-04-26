@@ -1,0 +1,11 @@
+{
+    "extends": "airbnb",
+    "rules": {
+      "react/jsx-filename-extension": 0,
+      "react/prop-types": 0,
+      "jsx-a11y/mouse-events-have-key-events": 0,
+      "react/no-multi-comp": 0,
+      "react/no-array-index-key": 0,
+      "react/jsx-boolean-value": 0
+    }
+}

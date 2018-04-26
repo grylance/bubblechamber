@@ -1,7 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
-import isMobile from 'is-mobile'
 
 const float = keyframes`
   from {
@@ -64,12 +62,7 @@ export default class Bubbles extends React.Component {
     setInterval(() => this.makeBubble(), 500)
   }
 
-  makeBubble () {
-    const {bubbles} = this.state
-
-    const top = Math.floor(Math.random() * window.innerHeight)
-    const left = Math.floor(Math.random() * window.innerWidth) - 50
-
+  makeBubble = () =>
     this.setState({
       bubbles: [
         ...this.state.bubbles,
@@ -79,9 +72,8 @@ export default class Bubbles extends React.Component {
           size: Math.floor(Math.random() * 50) + 50,
           speed: Math.floor(Math.random() * 30) + 10,
         },
-      ]
+      ],
     })
-  }
 
   render () {
     return (
@@ -90,8 +82,7 @@ export default class Bubbles extends React.Component {
           <BubbleComponent
             {...bubble}
             key={index}
-          />
-        )}
+          />)}
       </div>
     )
   }
