@@ -26,7 +26,7 @@ const pulse = keyframes`
 
 const Container = styled.div`
   min-height: 100vh;
-  background: linear-gradient(to bottom right, orange, green, blue);
+  background: linear-gradient(to bottom right, orange, blue);
   color: black;
   font-family: Helvetica;
   line-height: 30px;
@@ -50,7 +50,8 @@ const Content = styled.div`
 
 const Title = styled.h1`
   margin: 40px 0 10px;
-  font-family: 'Plank';
+  font-family: 'Univox';
+  font-size: 18px;
 `
 
 const Links = styled.div`
@@ -135,9 +136,9 @@ export default () =>
         <LinkTitle>30.06.18</LinkTitle>
         <RegularLink href='https://www.the-tower.co.uk/'>THE TOWER</RegularLink><br/>
       </Links>
-      <Title>
+      <Links>
         <RegularLink href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</RegularLink>
-      </Title>
+      </Links>
     </Content>
     {hasWindow && <Sphere />}
     {hasWindow && <Bubbles />}
