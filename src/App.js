@@ -136,6 +136,7 @@ export default () =>
         <LinkTitle>30.06.18</LinkTitle>
         <RegularLink href='https://www.the-tower.co.uk/'>THE TOWER</RegularLink><br/>
       </Links>
+      <br />
       <Links>
         <RegularLink href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</RegularLink>
       </Links>
