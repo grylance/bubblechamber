@@ -52,11 +52,15 @@ const Title = styled.h1`
   margin: 40px 0 10px;
   font-family: 'Univox';
   font-size: 18px;
+  @media (max-width: 400px) {
+    font-size: 15px;
+  }
 `
 
 const Links = styled.div`
   font-family: Plank;
   font-weight: normal;
+  letter-spacing: 1px;
 `
 
 const Link = styled.a`
