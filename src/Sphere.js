@@ -6,7 +6,7 @@ import styled, {keyframes} from 'styled-components'
 const Container = styled.button`
   display: none;
   @media (min-width: 1000px) {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0);
     height: calc(100vh - 40px);
     width: calc(50vw - 20px);
     top: 20px;

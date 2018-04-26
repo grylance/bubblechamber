@@ -19,11 +19,9 @@ const Bubble = styled.div`
   left: ${props => props.left}px;
   width: ${props => props.size}px;
   height: ${props => props.size}px;
-  opacity: 0.5;
   border-radius: 50%;
   cursor: pointer;
-  background: linear-gradient(to bottom, #3dff32 1%,#a189ff 100%);
-  opacity: 0.3;
+  background: white;
   animation: ${float} ${props => props.speed}s linear infinite;
 `
 
