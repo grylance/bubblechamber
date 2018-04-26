@@ -39,7 +39,7 @@ const Content = styled.div`
   color: white;
   text-align: left;
   padding: 35px 30px;
-  z-index: ${() => isMobile() ? 1 : 0};
+  z-index: ${() => isMobile() ? 10 : 0};
   @media (min-width: 700px) {
     padding: 60px;
   }

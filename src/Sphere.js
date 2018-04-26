@@ -4,15 +4,13 @@ import * as THREE from 'three'
 import styled, {keyframes} from 'styled-components'
 
 const Container = styled.button`
-  display: none;
+  background: rgba(0,0,0,0);
+  top: 0;
+  right: 0;
+  position: fixed;
+  width: 50vw;
+  height: 100vh;
   @media (min-width: 1000px) {
-    background: rgba(0,0,0,0);
-    height: calc(100vh - 40px);
-    width: calc(50vw - 20px);
-    top: 20px;
-    right: 20px;
-    position: fixed;
-    display: block;
     cursor: pointer;
     border: 0;
     outline: 0;
