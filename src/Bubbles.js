@@ -11,6 +11,12 @@ const float = keyframes`
   }
 `
 
+const flash = keyframes`
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+`
+
 const Bubble = styled.div`
   position: fixed;
   top: ${props => props.top}px;
@@ -44,6 +50,7 @@ const HighScore = styled.div`
   letter-spacing: 1px;
   color: white;
   font-size: 20px;
+  animation: ${flash} 2s linear infinite;
 `
 
 class BubbleComponent extends React.Component {
@@ -86,7 +93,7 @@ export default class Bubbles extends React.Component {
       highScore: window.localStorage.getItem('highScore'),
       currentScore: 0,
     }
-    setInterval(() => this.makeBubble(), 500)
+    setInterval(() => this.makeBubble(), 300)
   }
 
   didPop = () => {
@@ -99,14 +106,14 @@ export default class Bubbles extends React.Component {
   }
 
   makeBubble = () =>
-    this.setState({
+      this.setState({
       bubbles: [
         ...this.state.bubbles,
         {
           top: Math.floor(Math.random() * window.innerHeight),
           left: Math.floor(Math.random() * window.innerWidth) - 50,
           size: Math.floor(Math.random() * 50) + 50,
-          speed: Math.floor(Math.random() * 30) + 10,
+          speed: Math.floor(Math.random() * 20) + 10,
         },
       ],
     })
@@ -117,9 +124,7 @@ export default class Bubbles extends React.Component {
     return (
       <div>
         <Score>{this.state.currentScore}</Score>
-        {isHighScore &&
-          <HighScore>NEW HIGH SCORE!</HighScore>
-        }
+        {isHighScore && <HighScore>NEW HIGH SCORE</HighScore>}
         {this.state.bubbles.map((bubble, index) =>
           <BubbleComponent
             {...bubble}
