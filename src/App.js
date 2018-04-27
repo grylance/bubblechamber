@@ -124,14 +124,13 @@ export default class App extends React.Component {
           <Title>PARTIES</Title>
           <Links>
             <LinkTitle>2018</LinkTitle>
-            <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>003</Link>
-            <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>004</Link>
-            <UpcomingLink target='_blank' href='https://www.facebook.com/events/178381789371767/'>005</UpcomingLink>
+            <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>004</Link>
           </Links>
           <Links>
             <LinkTitle>2017</LinkTitle>
-            <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
           </Links>
           <Title>RADIO</Title>
           <Links>
