@@ -24,6 +24,28 @@ const Bubble = styled.div`
   animation: ${float} ${props => props.speed}s linear infinite;
 `
 
+const Score = styled.div`
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-family: Univox;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 50px;
+`
+
+const HighScore = styled.div`
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  font-family: Plank;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 20px;
+`
+
 class BubbleComponent extends React.Component {
   constructor (props) {
     super(props)
@@ -39,6 +61,7 @@ class BubbleComponent extends React.Component {
   hide = () => {
     this.pop.play()
     this.remove()
+    this.props.didPop()
   }
 
   remove = () => this.setState({hidden: true})
@@ -58,8 +81,21 @@ class BubbleComponent extends React.Component {
 export default class Bubbles extends React.Component {
   constructor () {
     super()
-    this.state = {bubbles: []}
+    this.state = {
+      bubbles: [],
+      highScore: window.localStorage.getItem('highScore'),
+      currentScore: 0,
+    }
     setInterval(() => this.makeBubble(), 500)
+  }
+
+  didPop = () => {
+    const nextScore = this.state.currentScore + 1
+    this.setState({currentScore: nextScore})
+
+    if (nextScore > this.state.highScore) {
+      window.localStorage.setItem('highScore', nextScore)
+    }
   }
 
   makeBubble = () =>
@@ -76,11 +112,18 @@ export default class Bubbles extends React.Component {
     })
 
   render () {
+    const isHighScore = this.state.currentScore > this.state.highScore
+
     return (
       <div>
+        <Score>{this.state.currentScore}</Score>
+        {isHighScore &&
+          <HighScore>NEW HIGH SCORE!</HighScore>
+        }
         {this.state.bubbles.map((bubble, index) =>
           <BubbleComponent
             {...bubble}
+            didPop={this.didPop}
             key={index}
           />)}
       </div>
