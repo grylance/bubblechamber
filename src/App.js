@@ -124,37 +124,37 @@ export default class App extends React.Component {
           <Title>PARTIES</Title>
           <Links>
             <LinkTitle>2018</LinkTitle>
-            <Link href='https://www.facebook.com/events/217436759008807/'>003</Link>
-            <Link href='https://www.facebook.com/events/2266322840060534/'>004</Link>
-            <UpcomingLink href='https://www.facebook.com/events/178381789371767/'>005</UpcomingLink>
+            <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>003</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>004</Link>
+            <UpcomingLink target='_blank' href='https://www.facebook.com/events/178381789371767/'>005</UpcomingLink>
           </Links>
           <Links>
             <LinkTitle>2017</LinkTitle>
-            <Link href='https://www.facebook.com/events/493753987662434/'>002</Link>
-            <Link href='https://www.facebook.com/events/178381789371767/'>001</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
           </Links>
           <Title>RADIO</Title>
           <Links>
             <LinkTitle>2018</LinkTitle>
-            <Link href='https://www.mixcloud.com/balamii/bubble-chamber-jan-2018/'>JAN</Link>
-            <Link href='https://www.mixcloud.com/balamii/bubble-chamber-feb-2018/'>FEB</Link>
-            <Link href='https://www.mixcloud.com/balamii/bubble-chamber-march-2018/'>MAR</Link>
-            <Link href='https://www.mixcloud.com/balamii/bubble-chamber-april-2018/'>APR</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-jan-2018/'>JAN</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-feb-2018/'>FEB</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-march-2018/'>MAR</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-april-2018/'>APR</Link>
           </Links>
           <Links>
             <LinkTitle>2017</LinkTitle>
-            <Link href='https://www.mixcloud.com/balamii/bubble-chamber-dec-2017/'>DEC</Link>
-            <Link href='https://www.mixcloud.com/balamii/bubble-chamber-oct-2017/'>OCT</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-dec-2017/'>DEC</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-oct-2017/'>OCT</Link>
           </Links>
           <Title>DATES</Title>
           <Links>
             <LinkTitle>13.05.18</LinkTitle>
-            <Link href='https://www.residentadvisor.net/events/1085790'>JADED</Link><br />
+            <Link target='_blank' href='https://www.residentadvisor.net/events/1085790'>JADED</Link><br />
             <LinkTitle>08.06.18</LinkTitle>
-            <Link href='http://www.meadowsinthemountains.com/'>MEADOWS IN THE MOUNTAINS</Link><br />
+            <Link target='_blank' href='http://www.meadowsinthemountains.com/'>MEADOWS IN THE MOUNTAINS</Link><br />
             <LinkTitle>30.06.18</LinkTitle>
-            <Link href='https://www.the-tower.co.uk/'>THE TOWER</Link><br />
-            <Email href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
+            <Link target='_blank' href='https://www.the-tower.co.uk/'>THE TOWER</Link><br />
+            <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
           </Links>
         </Content>
         {hasWindow && <Sphere toggled={this.state.toggled} toggle={this.toggle} />}
