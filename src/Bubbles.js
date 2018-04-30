@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
 
 const float = keyframes`
@@ -73,6 +74,20 @@ class BubbleComponent extends React.Component {
 
   remove = () => this.setState({hidden: true})
 
+  setupRef = ref => {
+    this.ref = ref
+    setInterval(this.trackPosition, 200)
+  }
+
+  trackPosition = () => {
+    const ele = ReactDOM.findDOMNode(this.ref)
+
+    if (ele) {    
+      const top = ele.getBoundingClientRect().top
+      if (top < 0 && top > -100 && !this.state.hidden) this.props.fail()
+    }
+  }
+
   render () {
     return !this.state.hidden ?
       <Bubble
@@ -81,6 +96,7 @@ class BubbleComponent extends React.Component {
         speed={this.props.speed}
         size={this.props.size}
         onMouseOver={this.hide}
+        ref={this.setupRef}
       /> : null
   }
 }
@@ -104,6 +120,9 @@ export default class Bubbles extends React.Component {
       window.localStorage.setItem('highScore', nextScore)
     }
   }
+
+  fail = () =>
+    this.setState({currentScore: 0})
 
   makeBubble = () =>
       this.setState({
@@ -130,6 +149,7 @@ export default class Bubbles extends React.Component {
             {...bubble}
             didPop={this.didPop}
             key={index}
+            fail={this.fail}
           />)}
       </div>
     )
