@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
+import Cookies from 'js-cookie'
 
 const float = keyframes`
   from {
@@ -109,7 +110,7 @@ export default class Bubbles extends React.Component {
     super()
     this.state = {
       bubbles: [],
-      highScore: window.localStorage.getItem('highScore'),
+      highScore: parseInt(Cookies.get('highScore'), 10) || 0,
       currentScore: 0,
     }
     setInterval(() => this.makeBubble(), 300)
@@ -122,14 +123,17 @@ export default class Bubbles extends React.Component {
     const nextScore = this.state.currentScore + 1
     this.setState({currentScore: nextScore})
 
-    if (nextScore > this.state.highScore) {
-      window.localStorage.setItem('highScore', nextScore)
-    }
+    if (nextScore > this.state.highScore) Cookies.set('highScore', nextScore)
   }
 
   fail = () => {
-    if (this.state.currentScore > 5) this.buzzer.play()
-    this.setState({currentScore: 0})
+    const {currentScore, highScore} = this.state
+    if (currentScore > 5) this.buzzer.play()
+
+    this.setState({
+      currentScore: 0,
+      highScore: currentScore > highScore ? currentScore : highScore
+    })
   }
 
   makeBubble = () =>
