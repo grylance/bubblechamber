@@ -51,6 +51,9 @@ const HighScore = styled.div`
   letter-spacing: 1px;
   color: white;
   font-size: 20px;
+`
+
+const NewHighScore = HighScore.extend`
   animation: ${flash} 2s linear infinite;
 `
 
@@ -110,6 +113,9 @@ export default class Bubbles extends React.Component {
       currentScore: 0,
     }
     setInterval(() => this.makeBubble(), 300)
+
+    this.buzzer = new Audio('/fail.mp3')
+    this.buzzer.volume = 0.5
   }
 
   didPop = () => {
@@ -121,8 +127,10 @@ export default class Bubbles extends React.Component {
     }
   }
 
-  fail = () =>
+  fail = () => {
+    if (this.state.currentScore > 5) this.buzzer.play()
     this.setState({currentScore: 0})
+  }
 
   makeBubble = () =>
       this.setState({
@@ -143,7 +151,11 @@ export default class Bubbles extends React.Component {
     return (
       <div>
         <Score>{this.state.currentScore}</Score>
-        {isHighScore && <HighScore>NEW HIGH SCORE</HighScore>}
+        {isHighScore ?
+          <NewHighScore>NEW HIGH SCORE</NewHighScore> :
+          this.state.highScore ?
+            <HighScore>HIGH SCORE {this.state.highScore}</HighScore> : null
+        }
         {this.state.bubbles.map((bubble, index) =>
           <BubbleComponent
             {...bubble}
