@@ -147,6 +147,8 @@ export default class App extends React.Component {
       this.drone.volume = 0.2
       this.bleep = new Audio('/bleep.mp3')
       this.bleep.volume = 0
+      this.gong = new Audio('/gong.mp3')
+      this.gong.volume = 0.7
 
       this.docTitle = document.title + ' '
       this.flashTitle()
@@ -162,6 +164,8 @@ export default class App extends React.Component {
 
   start = () => {
     this.setState({started: true})
+
+    this.gong.play()
 
     this.drone.play()
     this.drone.addEventListener('ended', () => this.drone.play())

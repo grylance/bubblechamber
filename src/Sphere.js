@@ -71,7 +71,7 @@ export default class Sphere extends React.Component {
               <sphereGeometry
                 widthSegments={this.props.toggled ? 5 : 20}
                 heightSegments={this.props.toggled ? 5 : 20}
-                radius={this.props.toggled ? 1.7 : 2.5}
+                radius={this.props.toggled ? 1.7 : 2.2}
               />
               <meshBasicMaterial
                 color={0xFFFFFF}
