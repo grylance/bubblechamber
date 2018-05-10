@@ -15,13 +15,13 @@ export default (body, styles) => `
     <div id='app'>${body}</div>
     <script src='main.js#${Date.now()}'></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118973477-1"></script>
-    ${hasWindow && `
+    ${hasWindow ? `
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-118973477-1');
-      </script>
-    `}
+      </script>` : ''
+    }
   </body>
 `

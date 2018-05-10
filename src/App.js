@@ -183,8 +183,8 @@ export default class App extends React.Component {
   }
 
   render () {
-    const showFun = this.state.started && hasWindow
-    const showEnter = !this.state.started && !isMobile()
+    const showFun = (this.state.started && hasWindow)
+    const showEnter = (!this.state.started && !isMobile())
 
     return (
       <Container style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
