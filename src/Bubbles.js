@@ -115,20 +115,25 @@ export default class Bubbles extends React.Component {
     }
     setInterval(() => this.makeBubble(), 300)
 
-    this.buzzer = new Audio('/fail.mp3')
-    this.buzzer.volume = 0.5
+    this.fail = new Audio('/fail.ogg')
+    this.fail.volume = 0.5
+    this.win = new Audio('/win.ogg')
+    this.win.volume = 0.5
   }
 
   didPop = () => {
     const nextScore = this.state.currentScore + 1
     this.setState({currentScore: nextScore})
 
-    if (nextScore > this.state.highScore) Cookies.set('highScore', nextScore)
+    if (nextScore > this.state.highScore) {
+      if (!Cookies.get('highScore')) this.win.play()
+      Cookies.set('highScore', nextScore)
+    }
   }
 
   fail = () => {
     const {currentScore, highScore} = this.state
-    if (currentScore > 5) this.buzzer.play()
+    if (currentScore > 5) this.fail.play()
 
     this.setState({
       currentScore: 0,
