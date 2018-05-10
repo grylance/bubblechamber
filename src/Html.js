@@ -8,7 +8,6 @@ export default (body, styles) => `
     <link rel="icon" href="/favicon.png">
     <meta property="og:image" content="/og-image.jpg" />
     <meta name="viewport" content="width=device-width" />
-    <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
     <link href='base.css' rel='stylesheet' />
     ${styles}
   </head>
