@@ -133,7 +133,7 @@ export default class Bubbles extends React.Component {
 
   fail = () => {
     const {currentScore, highScore} = this.state
-    if (currentScore > 5) this.buzzer.play()
+    if (currentScore > 0) this.buzzer.play()
 
     this.setState({
       currentScore: 0,
