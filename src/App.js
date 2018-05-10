@@ -132,6 +132,8 @@ const StartClicker = styled.div`
   }
 `
 
+var docTitle = hasWindow ? document.title + ' '  : ''
+
 export default class App extends React.Component {
   constructor () {
     super()
@@ -139,11 +141,24 @@ export default class App extends React.Component {
       toggled: true,
       started: false,
     }
-    this.drone = new Audio('/drone.ogg')
-    this.drone.volume = 0.2
-    this.bleep = new Audio('/bleep.ogg')
-    this.bleep.volume = 0
+
+    if (hasWindow) {
+      this.drone = new Audio('/drone.ogg')
+      this.drone.volume = 0.2
+      this.bleep = new Audio('/bleep.ogg')
+      this.bleep.volume = 0
+
+      this.docTitle = document.title + ' '
+      this.flashTitle()
+    }
   }
+
+  flashTitle = () => {
+    this.docTitle = this.docTitle.substring(1) + this.docTitle.substring(0,1)
+    document.title = this.docTitle
+    setTimeout(this.flashTitle, 50)
+  }
+
 
   start = () => {
     this.setState({started: true})
