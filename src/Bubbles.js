@@ -115,8 +115,8 @@ export default class Bubbles extends React.Component {
     }
     setInterval(() => this.makeBubble(), 300)
 
-    this.fail = new Audio('/fail.mp3')
-    this.fail.volume = 0.5
+    this.buzzer = new Audio('/fail.mp3')
+    this.buzzer.volume = 0.5
     this.win = new Audio('/win.mp3')
     this.win.volume = 0.5
   }
@@ -133,7 +133,7 @@ export default class Bubbles extends React.Component {
 
   fail = () => {
     const {currentScore, highScore} = this.state
-    if (currentScore > 5) this.fail.play()
+    if (currentScore > 5) this.buzzer.play()
 
     this.setState({
       currentScore: 0,
