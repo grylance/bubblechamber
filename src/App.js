@@ -184,6 +184,7 @@ export default class App extends React.Component {
 
   render () {
     const showFun = this.state.started && hasWindow
+    const showEnter = !this.state.started && !isMobile()
 
     return (
       <Container style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
@@ -229,11 +230,7 @@ export default class App extends React.Component {
         </Content>
         {showFun && <Sphere toggled={this.state.toggled} toggle={this.toggle} />}
         {(showFun && !isMobile()) && <Bubbles />}
-        {!this.state.started &&
-          <StartClicker onClick={this.start}>
-            ENTER
-          </StartClicker>
-        }
+        {showEnter && <StartClicker onClick={this.start}>ENTER</StartClicker>}
       </Container>
     )
   }
