@@ -28,7 +28,7 @@ const Bubble = styled.div`
   border-radius: 50%;
   cursor: pointer;
   background: white;
-  border: 2px solid orange;
+  border: 2px solid #F07D02;
   animation: ${float} ${props => props.speed}s linear infinite;
 `
 
@@ -86,7 +86,7 @@ class BubbleComponent extends React.Component {
   trackPosition = () => {
     const ele = ReactDOM.findDOMNode(this.ref)
 
-    if (ele) {    
+    if (ele) {
       const top = ele.getBoundingClientRect().top
       if (top < 0 && top > -100 && !this.state.hidden) this.props.fail()
     }

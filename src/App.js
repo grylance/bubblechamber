@@ -25,10 +25,17 @@ const pulse = keyframes`
   100% {transform: translateX(0) translateY(0) scale(1, 1.5);}
 `
 
+const shake = keyframes`
+  0% {transform: rotate(0deg);}
+  40% {transform: rotate(-1deg);}
+  80% {transform: rotate(1deg);}
+  100% {transform: rotate(0deg);}
+`
+
 const Container = styled.div`
   min-height: 100vh;
   background: linear-gradient(to bottom right, orange, blue);
-  background: orange;
+  background: #F07D02;
   font-family: Helvetica;
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -96,10 +103,33 @@ const LinkTitle = styled.span`
 
 const Logo = styled.img`
   width: 250px;
+  cursor: zoom-in;
+  &:hover {
+    animation: ${shake} 0.1s linear infinite;
+  }
 `
 
 const UpcomingLink = Link.extend`
-  animation: ${spin} 2s linear infinite;
+  animation: ${spin} 1.5s linear infinite;
+`
+
+const StartClicker = styled.div`
+  position: fixed;
+  cursor: zoom-in;
+  background: #F07D02;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ${pulse} 0.5s linear infinite;
+  font-family: Univox;
+  color: white;
+  @media (min-width: 700px) {
+    font-size: 30px;
+  }
 `
 
 export default class App extends React.Component {
@@ -107,18 +137,43 @@ export default class App extends React.Component {
     super()
     this.state = {
       toggled: true,
+      started: false,
     }
+    this.drone = new Audio('/drone.ogg')
+    this.drone.volume = 0.2
+    this.bleep = new Audio('/bleep.ogg')
+    this.bleep.volume = 0
+  }
+
+  start = () => {
+    this.setState({started: true})
+
+    this.drone.play()
+    this.drone.addEventListener('ended', () => this.drone.play())
+    this.bleep.play()
+    this.bleep.addEventListener('ended', () => this.bleep.play())
   }
 
   toggle = () => {
-    this.setState({toggled: !this.state.toggled})
+    const nextToggle = !this.state.toggled
+    this.setState({toggled: nextToggle})
+
+    if (nextToggle) {
+      this.drone.volume = 0.3
+      this.bleep.volume = 0
+    } else {
+      this.bleep.volume = 0.3
+      this.drone.volume = 0
+    }
   }
 
   render () {
+    const showFun = this.state.started && hasWindow
+
     return (
       <Container style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
         <Content>
-          <Logo src='logo.png' />
+          <Logo src='logo.png' onClick={this.toggle} />
           <Title>EMAIL</Title>
           <EmailSignup />
           <Title>PARTIES</Title>
@@ -126,6 +181,7 @@ export default class App extends React.Component {
             <LinkTitle>2018</LinkTitle>
             <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
             <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>004</Link>
+            <UpcomingLink target='_blank' href='https://www.facebook.com/events/1757292387718758/'>005</UpcomingLink>
           </Links>
           <Links>
             <LinkTitle>2017</LinkTitle>
@@ -156,8 +212,13 @@ export default class App extends React.Component {
             <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
           </Links>
         </Content>
-        {hasWindow && <Sphere toggled={this.state.toggled} toggle={this.toggle} />}
-        {(hasWindow && !isMobile()) && <Bubbles />}
+        {showFun && <Sphere toggled={this.state.toggled} toggle={this.toggle} />}
+        {(showFun && !isMobile()) && <Bubbles />}
+        {!this.state.started &&
+          <StartClicker onClick={this.start}>
+            ENTER
+          </StartClicker>
+        }
       </Container>
     )
   }

@@ -11,12 +11,14 @@ const Container = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
+  cursor: zoom-in;
+  display: ${isMobile() ? 'block' : 'none'};
   &:hover {
     transform: scale(1.05);
   }
   @media (min-width: 1000px) {
+    display: block;
     width: 50vw;
-    cursor: pointer;
   }
 `
 
@@ -28,16 +30,6 @@ export default class Sphere extends React.Component {
     this.state = {
       rotation: new THREE.Euler(),
     }
-
-    this.drone = new Audio('/drone.ogg')
-    this.drone.volume = 0.2
-    this.drone.play()
-    this.drone.addEventListener('ended', () => this.drone.play())
-
-    this.bleep = new Audio('/bleep.ogg')
-    this.bleep.volume = 0
-    this.bleep.play()
-    this.bleep.addEventListener('ended', () => this.bleep.play())
   }
 
   onAnimate = () => {
@@ -50,14 +42,6 @@ export default class Sphere extends React.Component {
         50
       ),
     })
-
-    if (this.props.toggled) {
-      this.drone.volume = 0.3
-      this.bleep.volume = 0
-    } else {
-      this.bleep.volume = 0.3
-      this.drone.volume = 0
-    }
   }
 
   render () {
