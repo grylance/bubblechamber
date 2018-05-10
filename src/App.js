@@ -143,9 +143,9 @@ export default class App extends React.Component {
     }
 
     if (hasWindow) {
-      this.drone = new Audio('/drone.ogg')
+      this.drone = new Audio('/drone.mp3')
       this.drone.volume = 0.2
-      this.bleep = new Audio('/bleep.ogg')
+      this.bleep = new Audio('/bleep.mp3')
       this.bleep.volume = 0
 
       this.docTitle = document.title + ' '

@@ -115,9 +115,9 @@ export default class Bubbles extends React.Component {
     }
     setInterval(() => this.makeBubble(), 300)
 
-    this.fail = new Audio('/fail.ogg')
+    this.fail = new Audio('/fail.mp3')
     this.fail.volume = 0.5
-    this.win = new Audio('/win.ogg')
+    this.win = new Audio('/win.mp3')
     this.win.volume = 0.5
   }
 
