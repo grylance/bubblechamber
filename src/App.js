@@ -46,7 +46,6 @@ const Content = styled.div`
   color: white;
   text-align: left;
   padding: 35px 30px;
-  z-index: ${isMobile() ? 10 : 0};
   position: relative;
   @media (min-width: 700px) {
     padding: 60px;
@@ -107,6 +106,10 @@ const Logo = styled.img`
   &:hover {
     animation: ${shake} 0.1s linear infinite;
   }
+  @media (max-width: 500px) {
+    width: 150px;
+    margin-top: 15px;
+  }
 `
 
 const UpcomingLink = Link.extend`
@@ -127,6 +130,7 @@ const StartClicker = styled.div`
   animation: ${pulse} 0.5s linear infinite;
   font-family: Univox;
   color: white;
+  z-index: 2;
   @media (min-width: 700px) {
     font-size: 30px;
   }
@@ -188,7 +192,7 @@ export default class App extends React.Component {
 
   render () {
     const showFun = (this.state.started && hasWindow)
-    const showEnter = (!this.state.started && !isMobile())
+    const showEnter = !this.state.started
 
     return (
       <Container style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
@@ -232,8 +236,7 @@ export default class App extends React.Component {
             <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
           </Links>
         </Content>
-        {showFun && <Sphere toggled={this.state.toggled} toggle={this.toggle} />}
-        {(showFun && !isMobile()) && <Bubbles />}
+        {showFun && <Bubbles />}
         {showEnter && <StartClicker onClick={this.start}>ENTER</StartClicker>}
       </Container>
     )

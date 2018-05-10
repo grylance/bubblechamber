@@ -41,6 +41,9 @@ const Score = styled.div`
   letter-spacing: 1px;
   color: white;
   font-size: 50px;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `
 
 const HighScore = styled.div`
@@ -52,6 +55,10 @@ const HighScore = styled.div`
   letter-spacing: 1px;
   color: white;
   font-size: 20px;
+  @media (max-width: 500px) {
+    font-size: 10px;
+    top: 30px;
+  }
 `
 
 const NewHighScore = HighScore.extend`
