@@ -202,15 +202,15 @@ export default class App extends React.Component {
           <EmailSignup />
           <Title>PARTIES</Title>
           <Links>
-            <LinkTitle>2018</LinkTitle>
-            <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
-            <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>004</Link>
+            <LinkTitle>Upcoming</LinkTitle>
             <UpcomingLink target='_blank' href='https://www.facebook.com/events/1757292387718758/'>005</UpcomingLink>
           </Links>
           <Links>
-            <LinkTitle>2017</LinkTitle>
+            <LinkTitle>Previous</LinkTitle>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
             <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>004</Link>
           </Links>
           <Title>RADIO</Title>
           <Links>
@@ -237,6 +237,7 @@ export default class App extends React.Component {
           </Links>
         </Content>
         {showFun && <Bubbles />}
+        {showFun && !isMobile() && <Sphere toggled={this.state.toggled} toggle={this.toggle} />}
         {showEnter && <StartClicker onClick={this.start}>ENTER</StartClicker>}
       </Container>
     )

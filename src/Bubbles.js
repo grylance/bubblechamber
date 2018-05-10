@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, {keyframes} from 'styled-components'
 import Cookies from 'js-cookie'
+import isMobile from 'is-mobile'
 
 const float = keyframes`
   from {
@@ -120,7 +121,7 @@ export default class Bubbles extends React.Component {
       highScore: parseInt(Cookies.get('highScore'), 10) || 0,
       currentScore: 0,
     }
-    setInterval(() => this.makeBubble(), 300)
+    setInterval(() => this.makeBubble(), isMobile() ? 1500 : 300)
 
     this.buzzer = new Audio('/fail.mp3')
     this.buzzer.volume = 0.5
