@@ -11,7 +11,7 @@ const Container = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  cursor: zoom-in;
+  cursor: pointer;
   display: ${isMobile() ? 'block' : 'none'};
   &:hover {
     transform: scale(1.05);
