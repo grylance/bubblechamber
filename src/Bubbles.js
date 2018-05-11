@@ -31,6 +31,7 @@ const Bubble = styled.div`
   background: white;
   border: 2px solid #F07D02;
   animation: ${float} ${props => props.speed}s linear infinite;
+  z-index: 10;
 `
 
 const Score = styled.div`
