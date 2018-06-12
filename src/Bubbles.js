@@ -14,6 +14,24 @@ const float = keyframes`
   }
 `
 
+const wobble = keyframes`
+  0% {
+    border-radius: 50% 49% 55% 48%;
+  }
+  25% {
+    border-radius: 52% 49% 52% 58%;
+  }
+  50% {
+    border-radius: 50% 49% 52% 48%;
+  }
+  75% {
+    border-radius: 49% 47% 50% 52%;
+  }
+  100% {
+    border-radius: 50% 49% 55% 48%;
+  }
+`
+
 const flash = keyframes`
   0% {opacity: 1}
   50% {opacity: 0}
@@ -30,7 +48,7 @@ const Bubble = styled.div`
   cursor: pointer;
   background: white;
   border: 2px solid #F07D02;
-  animation: ${float} ${props => props.speed}s linear infinite;
+  animation: ${float} ${props => props.speed}s linear infinite, ${wobble} 2s ease-in-out infinite;
   z-index: 10;
 `
 
