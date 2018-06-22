@@ -231,6 +231,8 @@ export default class App extends React.Component {
             <Link target='_blank' href='http://www.meadowsinthemountains.com/'>MEADOWS IN THE MOUNTAINS</Link><br />
             <LinkTitle>30.06.18</LinkTitle>
             <Link target='_blank' href='https://www.the-tower.co.uk/'>THE TOWER</Link><br />
+            <LinkTitle>14.07.18</LinkTitle>
+            <Link target='_blank' href='https://brainchildfestival.co.uk/'>BRAINCHILD</Link><br />
             <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
           </Links>
         </Content>
