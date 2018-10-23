@@ -202,7 +202,7 @@ export default class App extends React.Component {
           <EmailSignup />
           <Title>UPCOMING</Title>
           <Links>
-            <UpcomingLink href='hello'>1st birthday</UpcomingLink>
+            <UpcomingLink href='https://www.facebook.com/events/460063541152706/' target='_blank'>1st birthday</UpcomingLink>
           </Links>
           <Title>PARTIES</Title>
           <Links>
