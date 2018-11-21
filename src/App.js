@@ -200,10 +200,6 @@ export default class App extends React.Component {
           <Logo src='logo.png' onClick={this.toggle} />
           <Title>EMAIL</Title>
           <EmailSignup />
-          <Title>UPCOMING</Title>
-          <Links>
-            <UpcomingLink href='https://www.facebook.com/events/460063541152706/' target='_blank'>1st birthday</UpcomingLink>
-          </Links>
           <Title>PARTIES</Title>
           <Links>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
@@ -211,6 +207,7 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
             <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>004</Link>
             <Link target='_blank' href='https://www.facebook.com/events/1757292387718758/'>005</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/460063541152706/'>1st birthday</Link>
           </Links>
           <Title>RADIO</Title>
           <Links>
@@ -224,6 +221,7 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-august-2018/'>AUG</Link>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-september-2018/'>SEP</Link>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-october-2018/'>OCT</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-november-2018/'>NOV</Link>
           </Links>
           <Links>
             <LinkTitle>2017</LinkTitle>
@@ -240,6 +238,8 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.the-tower.co.uk/'>THE TOWER</Link><br />
             <LinkTitle>14.07.18</LinkTitle>
             <Link target='_blank' href='https://brainchildfestival.co.uk/'>BRAINCHILD</Link><br />
+            <LinkTitle>24.11.18</LinkTitle>
+            <Link target='_blank' href='https://www.facebook.com/events/1820741827975816/'>THE CAUSE</Link><br />
             <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
           </Links>
         </Content>
