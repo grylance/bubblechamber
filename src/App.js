@@ -238,6 +238,8 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.the-tower.co.uk/'>THE TOWER</Link><br />
             <LinkTitle>14.07.18</LinkTitle>
             <Link target='_blank' href='https://brainchildfestival.co.uk/'>BRAINCHILD</Link><br />
+            <LinkTitle>29.09.18</LinkTitle>
+            <Link target='_blank' href='https://www.facebook.com/events/280621779211177/'>THE LONDON LOFT PARTY</Link><br />
             <LinkTitle>24.11.18</LinkTitle>
             <Link target='_blank' href='https://www.facebook.com/events/1820741827975816/'>THE CAUSE</Link><br />
             <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
