@@ -200,6 +200,10 @@ export default class App extends React.Component {
           <Logo src='logo.png' onClick={this.toggle} />
           <Title>EMAIL</Title>
           <EmailSignup />
+          <Title>UPCOMING</Title>
+          <Links>
+            <UpcomingLink href='https://www.facebook.com/events/1915132838598417/'>007</UpcomingLink>
+          </Links>
           <Title>PARTIES</Title>
           <Links>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
@@ -207,7 +211,7 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
             <Link target='_blank' href='https://www.facebook.com/events/217436759008807/'>004</Link>
             <Link target='_blank' href='https://www.facebook.com/events/1757292387718758/'>005</Link>
-            <Link target='_blank' href='https://www.facebook.com/events/460063541152706/'>1st birthday</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/460063541152706/'>006</Link>
           </Links>
           <Title>RADIO</Title>
           <Links>
