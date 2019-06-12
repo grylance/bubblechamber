@@ -200,6 +200,10 @@ export default class App extends React.Component {
           <Logo src='logo.png' onClick={this.toggle} />
           <Title>EMAIL</Title>
           <EmailSignup />
+          <Title>UPCOMING</Title>
+          <Links>
+            <UpcomingLink href='https://www.facebook.com/events/455542531884867/'>008</UpcomingLink>
+          </Links>
           <Title>PARTIES</Title>
           <Links>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
