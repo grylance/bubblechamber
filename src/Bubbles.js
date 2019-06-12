@@ -47,7 +47,6 @@ const Bubble = styled.div`
   border-radius: 50%;
   cursor: pointer;
   background: white;
-  border: 2px solid #F07D02;
   animation: ${float} ${props => props.speed}s linear infinite, ${wobble} 2s ease-in-out infinite;
   z-index: 10;
 `

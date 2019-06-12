@@ -13,9 +13,6 @@ const Container = styled.div`
   height: 100vh;
   cursor: pointer;
   display: ${isMobile() ? 'block' : 'none'};
-  &:hover {
-    transform: scale(1.05);
-  }
   @media (min-width: 1000px) {
     display: block;
     width: 50vw;
@@ -33,7 +30,7 @@ export default class Sphere extends React.Component {
   }
 
   onAnimate = () => {
-    const speed = this.props.toggled ? 0.03 : 0.06
+    const speed = this.props.toggled ? 0.03 : 0.02
 
     this.setState({
       rotation: new THREE.Euler(
@@ -69,9 +66,9 @@ export default class Sphere extends React.Component {
             />
             <mesh rotation={this.state.rotation}>
               <sphereGeometry
-                widthSegments={this.props.toggled ? 5 : 20}
-                heightSegments={this.props.toggled ? 5 : 20}
-                radius={this.props.toggled ? 1.7 : 2.2}
+                widthSegments={this.props.toggled ? 10 : 3}
+                heightSegments={this.props.toggled ? 10 : 3}
+                radius={this.props.toggled ? 2.2 : 1.7}
               />
               <meshBasicMaterial
                 color={0xFFFFFF}

@@ -34,7 +34,6 @@ const shake = keyframes`
 
 const Container = styled.div`
   min-height: 100vh;
-  background: linear-gradient(to bottom right, orange, blue);
   background: #F07D02;
   font-family: Helvetica;
   position: relative;
@@ -44,6 +43,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   color: white;
+  background: #F07D02;
   text-align: left;
   padding: 35px 30px;
   position: relative;
@@ -51,7 +51,7 @@ const Content = styled.div`
     padding: 60px;
   }
   @media (min-width: 1000px) {
-    width: 50%;
+    padding-right: 50%;
   }
 `
 
@@ -127,7 +127,6 @@ const StartClicker = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: ${pulse} 0.5s linear infinite;
   font-family: Univox;
   color: white;
   z-index: 2;
@@ -195,11 +194,9 @@ export default class App extends React.Component {
     const showEnter = !this.state.started
 
     return (
-      <Container style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
-        <Content>
+      <Container>
+        <Content style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
           <Logo src='logo.png' onClick={this.toggle} />
-          <Title>EMAIL</Title>
-          <EmailSignup />
           <Title>UPCOMING</Title>
           <Links>
             <UpcomingLink href='https://www.facebook.com/events/455542531884867/'>008</UpcomingLink>
@@ -216,6 +213,14 @@ export default class App extends React.Component {
           </Links>
           <Title>RADIO</Title>
           <Links>
+            <LinkTitle>2019</LinkTitle>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-february-2019/'>FEB</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-march-2019/'>MAR</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-with-hmurd-april-2019/'>APR</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-april-2019/'>MAY</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-june-2019/'>JUN</Link>
+          </Links>
+          <Links>
             <LinkTitle>2018</LinkTitle>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-jan-2018/'>JAN</Link>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-feb-2018/'>FEB</Link>
@@ -227,26 +232,14 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-september-2018/'>SEP</Link>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-october-2018/'>OCT</Link>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-november-2018/'>NOV</Link>
+            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-with-hi-saberh%C3%A4gen-and-sze-records-december-2018/'>DEC</Link>
           </Links>
           <Links>
             <LinkTitle>2017</LinkTitle>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-dec-2017/'>DEC</Link>
             <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-oct-2017/'>OCT</Link>
           </Links>
-          <Title>DATES</Title>
           <Links>
-            <LinkTitle>13.05.18</LinkTitle>
-            <Link target='_blank' href='https://www.residentadvisor.net/events/1085790'>JADED</Link><br />
-            <LinkTitle>08.06.18</LinkTitle>
-            <Link target='_blank' href='http://www.meadowsinthemountains.com/'>MEADOWS IN THE MOUNTAINS</Link><br />
-            <LinkTitle>30.06.18</LinkTitle>
-            <Link target='_blank' href='https://www.the-tower.co.uk/'>THE TOWER</Link><br />
-            <LinkTitle>14.07.18</LinkTitle>
-            <Link target='_blank' href='https://brainchildfestival.co.uk/'>BRAINCHILD</Link><br />
-            <LinkTitle>29.09.18</LinkTitle>
-            <Link target='_blank' href='https://www.facebook.com/events/280621779211177/'>THE LONDON LOFT PARTY</Link><br />
-            <LinkTitle>24.11.18</LinkTitle>
-            <Link target='_blank' href='https://www.facebook.com/events/1820741827975816/'>THE CAUSE</Link><br />
             <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
           </Links>
         </Content>
