@@ -197,12 +197,11 @@ export default class App extends React.Component {
       <Container>
         <Content style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
           <Logo src='logo.png' onClick={this.toggle} />
-          <Title>UPCOMING</Title>
-          <Links>
-            <UpcomingLink href='https://www.facebook.com/events/455542531884867/'>008</UpcomingLink>
-          </Links>
           <Title>PARTIES</Title>
           <Links>
+            <LinkTitle>Upcoming</LinkTitle>
+            <UpcomingLink href='https://www.facebook.com/events/455542531884867/'>008</UpcomingLink>
+            <LinkTitle>Previous</LinkTitle>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
             <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
             <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
