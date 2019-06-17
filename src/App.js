@@ -197,6 +197,7 @@ export default class App extends React.Component {
       <Container>
         <Content style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
           <Logo src='logo.png' onClick={this.toggle} />
+          <EmailSignup />
           <Title>PARTIES</Title>
           <Links>
             <LinkTitle>Upcoming</LinkTitle>

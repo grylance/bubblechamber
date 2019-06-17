@@ -16,6 +16,7 @@ const Input = styled.input`
   max-width: 100%;
   border-radius: 0;
   -webkit-appearance: none;
+  margin-top: 40px;
   ::placeholder {
     color: rgba(255,255,255,0.5);
   }
