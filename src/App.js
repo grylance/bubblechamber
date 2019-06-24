@@ -200,7 +200,6 @@ export default class App extends React.Component {
           <EmailSignup />
           <Title>PARTIES</Title>
           <Links>
-            <Link target='_blank' href='https://www.facebook.com/events/455542531884867/'>008</Link>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
             <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
             <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
@@ -208,6 +207,7 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.facebook.com/events/1757292387718758/'>005</Link>
             <Link target='_blank' href='https://www.facebook.com/events/460063541152706/'>006</Link>
             <Link target='_blank' href='https://www.facebook.com/events/1915132838598417/'>007</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/455542531884867/'>008</Link>
           </Links>
           <Title>RADIO</Title>
           <Links>
