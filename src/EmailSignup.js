@@ -11,14 +11,14 @@ const Input = styled.input`
   font-weight: bold;
   font-size: 14px;
   background: transparent;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #000;
+  color: #000;
   max-width: 100%;
   border-radius: 0;
   -webkit-appearance: none;
   margin-top: 40px;
   ::placeholder {
-    color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.5);
   }
 `
 

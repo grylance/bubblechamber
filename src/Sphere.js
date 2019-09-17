@@ -71,7 +71,7 @@ export default class Sphere extends React.Component {
                 radius={this.props.toggled ? 2.2 : 1.7}
               />
               <meshBasicMaterial
-                color={0xFFFFFF}
+                color={0x000000}
                 wireframe
               />
             </mesh>
