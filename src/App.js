@@ -201,9 +201,7 @@ export default class App extends React.Component {
           <Title>PARTIES</Title>
           <Links>
             <LinkTitle>Upcoming</LinkTitle>
-            <UpcomingLink target='_blank' href='https://www.facebook.com/events/558928984695852/'>010</UpcomingLink>
-            <Link target='_blank' href='https://www.facebook.com/events/792635437884053/'>011</Link>
-            <Link target='_blank' href='https://www.facebook.com/events/1037764323259473/'>012</Link>
+            <UpcomingLink target='_blank' href='https://ra.co/events/1439282'>CLUB WINSTON RELEASE PARTY</UpcomingLink>
             <LinkTitle>Previous</LinkTitle>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
             <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
