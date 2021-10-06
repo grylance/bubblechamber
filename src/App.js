@@ -10,8 +10,11 @@ const hasWindow = typeof window !== 'undefined'
 
 const spin = keyframes`
   0% {transform:rotate(0deg);}
-  80% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
+  40% {transform:rotate(0deg);}
+  50% {transform:rotate(-1deg);}
+  60% {transform:rotate(1deg);}
+  70% {transform:rotate(0);}
+  100% {transform:rotate(0deg);}
 `
 
 const pulse = keyframes`
@@ -47,6 +50,7 @@ const Content = styled.div`
   text-align: left;
   padding: 35px 30px;
   position: relative;
+  min-height: 100vh;
   @media (min-width: 700px) {
     padding: 60px;
   }
@@ -68,12 +72,11 @@ const Title = styled.h1`
 `
 
 const Links = styled.div`
-  font-family: Plank;
   font-weight: normal;
   letter-spacing: 1px;
 
-  line-height: 30px;
-  font-size: 24px;
+  line-height: 24px;
+  font-size: 20px;
   @media (max-width: 500px) {
     font-size: 16px;
     line-height: 20px;
@@ -200,9 +203,9 @@ export default class App extends React.Component {
           <EmailSignup />
           <Title>PARTIES</Title>
           <Links>
-            <LinkTitle>Upcoming</LinkTitle>
-            <UpcomingLink target='_blank' href='https://ra.co/events/1439282'>CLUB WINSTON RELEASE PARTY</UpcomingLink>
-            <LinkTitle>Previous</LinkTitle>
+            <LinkTitle>UPCOMING</LinkTitle>
+            <UpcomingLink target='_blank' href='https://ra.co/events/1454692'>FOREST DRIVE WEST & DILLINJA</UpcomingLink>
+            <LinkTitle>PREVIOUS</LinkTitle>
             <Link target='_blank' href='https://www.facebook.com/events/178381789371767/'>001</Link>
             <Link target='_blank' href='https://www.facebook.com/events/493753987662434/'>002</Link>
             <Link target='_blank' href='https://www.facebook.com/events/2266322840060534/'>003</Link>
@@ -212,35 +215,13 @@ export default class App extends React.Component {
             <Link target='_blank' href='https://www.facebook.com/events/1915132838598417/'>007</Link>
             <Link target='_blank' href='https://www.facebook.com/events/455542531884867/'>008</Link>
             <Link target='_blank' href='https://www.facebook.com/events/2457933797622156/'>009</Link>
-            <Link target='_blank' href='https://www.facebook.com/events/735829553563438/'>NYE</Link>
+            <Link target='_blank' href='https://www.facebook.com/events/735829553563438/'>NYE 2019</Link>
+            <Link target='_blank' href='https://ra.co/events/1439282'>011</Link>
           </Links>
           <Title>RADIO</Title>
           <Links>
-            <LinkTitle>2019</LinkTitle>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-february-2019/'>FEB</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-march-2019/'>MAR</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-with-hmurd-april-2019/'>APR</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-april-2019/'>MAY</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-june-2019/'>JUN</Link>
-          </Links>
-          <Links>
-            <LinkTitle>2018</LinkTitle>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-jan-2018/'>JAN</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-feb-2018/'>FEB</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-march-2018/'>MAR</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-april-2018/'>APR</Link>
-            <Link target='_blank' href='https://soundcloud.com/balamii/bubble-chamber-with-96-back-may-2018/'>MAY</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-june-2018/'>JUN</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-august-2018/'>AUG</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-september-2018/'>SEP</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-october-2018/'>OCT</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-november-2018/'>NOV</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-with-hi-saberh%C3%A4gen-and-sze-records-december-2018/'>DEC</Link>
-          </Links>
-          <Links>
-            <LinkTitle>2017</LinkTitle>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-dec-2017/'>DEC</Link>
-            <Link target='_blank' href='https://www.mixcloud.com/balamii/bubble-chamber-oct-2017/'>OCT</Link>
+            <Link target='_blank' href='https://www.balamii.com/host/bubble-chamber'>BALAMII</Link>
+            <Link target='_blank' href='https://www.nts.live/find?q=bubble%20chamber&type=all'>NTS</Link>
           </Links>
           <Links>
             <Email target='_blank' href='mailto:hello@bubblechamber.club'>hello@bubblechamber.club</Email>
