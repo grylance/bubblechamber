@@ -2,7 +2,6 @@ import React from 'react'
 import styled, {keyframes} from 'styled-components'
 import isMobile from 'is-mobile'
 
-import EmailSignup from './EmailSignup'
 import Bubbles from './Bubbles'
 import Sphere from './Sphere'
 
@@ -200,7 +199,6 @@ export default class App extends React.Component {
       <Container>
         <Content style={{filter: this.state.toggled ? '' : 'invert(100%)'}}>
           <Logo src='logo.png' onClick={this.toggle} />
-          <EmailSignup />
           <Title>PARTIES</Title>
           <Links>
             <LinkTitle>UPCOMING</LinkTitle>
